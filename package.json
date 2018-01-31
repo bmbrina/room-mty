@@ -28,7 +28,8 @@
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
-    "share": "concurrently -k -r -s first \"npm run open:src\" \"npm run localtunnel\" "
+    "share": "concurrently -k -r -s first \"npm run open:src\" \"npm run localtunnel\" ",
+    "pretty": "prettier --write --single-quote \"src/**/*.{js,jsx}\" "
   },
   "author": "Icalia Labs",
   "license": "Commercial",
