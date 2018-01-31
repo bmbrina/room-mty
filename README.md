@@ -1,13 +1,13 @@
 # strop-ui
 
-Front End for (strop-insights)[https://github.com/IcaliaLabs/strop-insights].
+Front End for [strop-insights](https://github.com/IcaliaLabs/strop-insights).
 Invision: https://invis.io/SGDI43A2X
 
-This app is based on the boilerplate (react-slingshot)[https://github.com/coryhouse/react-slingshot]. Go there for details on the development setup, production build, etc.
+This app is based on the boilerplate [react-slingshot](https://github.com/coryhouse/react-slingshot). Go there for details on the development setup, production build, etc.
 
 The only thing that I've added is: 
-* `npm run share` which will share with (localtunnel)[https://localtunnel.github.io/www/] the app to a public url.
-* `npm run security-check` which will look for any vulnerabilities in the npm packages with (nodesecurity.io)[https://nodesecurity.io/]
+* `npm run share` which will share with [localtunnel](https://localtunnel.github.io/www/) the app to a public url.
+* `npm run security-check` which will look for any vulnerabilities in the npm packages with [nodesecurity.io](https://nodesecurity.io/)
 
 ## Table of contents
 
