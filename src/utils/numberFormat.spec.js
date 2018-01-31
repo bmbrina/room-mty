@@ -1,4 +1,9 @@
-import {getCurrencyFormattedNumber, isInt, scrubFormatting, getFormattedNumber} from './numberFormat';
+import {
+  getCurrencyFormattedNumber,
+  isInt,
+  scrubFormatting,
+  getFormattedNumber
+} from './numberFormat';
 
 describe('Number Formatter', () => {
   describe('getCurrencyFormattedNumber', () => {

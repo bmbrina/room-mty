@@ -17,11 +17,17 @@ class App extends React.Component {
     return (
       <div>
         <div>
-          <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
+          <NavLink exact to="/" activeStyle={activeStyle}>
+            Home
+          </NavLink>
           {' | '}
-          <NavLink to="/fuel-savings" activeStyle={activeStyle}>Demo App</NavLink>
+          <NavLink to="/fuel-savings" activeStyle={activeStyle}>
+            Demo App
+          </NavLink>
           {' | '}
-          <NavLink to="/about" activeStyle={activeStyle}>About</NavLink>
+          <NavLink to="/about" activeStyle={activeStyle}>
+            About
+          </NavLink>
         </div>
         <Switch>
           <Route exact path="/" component={HomePage} />

@@ -1,4 +1,4 @@
-import {roundNumber, addArray, convertToPennies} from './math';
+import { roundNumber, addArray, convertToPennies } from './math';
 
 describe('Math Helper', () => {
   describe('roundNumber', () => {

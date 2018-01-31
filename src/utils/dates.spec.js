@@ -1,4 +1,4 @@
-import {getFormattedDateTime} from './dates';
+import { getFormattedDateTime } from './dates';
 
 describe('Date Helper', () => {
   describe('getFormattedDateTime', () => {
