@@ -1,7 +1,7 @@
 {
-  "name": "strop-ui",
+  "name": "room",
   "version": "0.1.0",
-  "description": "Strop UI",
+  "description": "Room",
   "engines": {
     "npm": ">=3"
   },
@@ -31,7 +31,7 @@
     "share": "concurrently -k -r -s first \"npm run open:src\" \"npm run localtunnel\" ",
     "pretty": "prettier --write --single-quote \"src/**/*.{js,jsx}\" "
   },
-  "author": "Icalia Labs",
+  "author": "Bárbara M Brina",
   "license": "Commercial",
   "dependencies": {
     "object-assign": "4.1.0",
