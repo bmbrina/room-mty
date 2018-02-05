@@ -1,7 +1,4 @@
-# room
-
-Front End for [strop-insights](https://github.com/IcaliaLabs/strop-insights).
-Invision: https://invis.io/SGDI43A2X
+# room-mty
 
 This app is based on the boilerplate [react-slingshot](https://github.com/coryhouse/react-slingshot). Go there for details on the development setup, production build, etc.
 
