@@ -10,7 +10,6 @@ The only thing that I've added is:
 
 * [Setup the project](#setup-the-project)
 * [Running the stack for development](#running-the-stack-for-development)
-* [Stop the project](#stop-the-project)
 * [Restoring the database](#restoring-the-database)
 * [Debugging](#debugging)
 * [Running specs](#running-specs)
@@ -22,7 +21,7 @@ The only thing that I've added is:
 1. Clone this repository into your local machine
 
 ```bash
-$ git clone git@github.com:IcaliaLabs/strop-insights.git
+$ git clone git@github.com:bmbrina/room-mty.git
 ```
 
 2. Simply run `npm install`
@@ -31,14 +30,7 @@ $ git clone git@github.com:IcaliaLabs/strop-insights.git
 
 1. Open a terminal and run:
 ```
-$ npm start -s
-```
-
-### Stop the project
-
-1. To stop every container run in the terminal:
-```
-$ stop the process in the terminal
+$ npm start
 ```
 
 ### Running test
