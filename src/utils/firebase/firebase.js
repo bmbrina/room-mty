@@ -1,6 +1,6 @@
 import * as firebase from 'firebase';
 
-var config = {
+let config = {
   apiKey: "AIzaSyDU58plDbu1fpRc5cFACkHiCzGct8munv0",
   authDomain: "room-mty.firebaseapp.com",
   databaseURL: "https://room-mty.firebaseio.com",
