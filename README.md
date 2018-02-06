@@ -6,15 +6,6 @@ The only thing that I've added is:
 * `npm run share` which will share with [localtunnel](https://localtunnel.github.io/www/) the app to a public url.
 * `npm run security-check` which will look for any vulnerabilities in the npm packages with [nodesecurity.io](https://nodesecurity.io/)
 
-## Table of contents
-
-* [Setup the project](#setup-the-project)
-* [Running the stack for development](#running-the-stack-for-development)
-* [Restoring the database](#restoring-the-database)
-* [Debugging](#debugging)
-* [Running specs](#running-specs)
-* [Checking code for potential issues](#checking-code-for-potential-issues)
-
 ## Development
 
 ### Setup the project
