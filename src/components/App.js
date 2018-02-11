@@ -10,9 +10,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <NavLink exact to="/">
-          <img className="logo" src={logo}/>
-        </NavLink>
+        <div className="logo">
+          <NavLink exact to="/">
+            <img className="logo__image" src={logo}/>
+          </NavLink>
+        </div>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/about" component={AboutPage} />

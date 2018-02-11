@@ -7,12 +7,20 @@ body {
   padding: px-to-rems(50) 0 0 px-to-rems(80);
 
   @include breakpoint(s) {
-    -ms-flex-align: center;
-    -ms-flex-pack: center;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    padding: px-to-rems(50) 0 0 0;
+
+    a {
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center
+    }
+  }
+
+  &__image {
+    @include breakpoint(s) {
+      width: 60%;
+      height: auto;
+    }
   }
 }
