@@ -1,0 +1,42 @@
+%background {
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  min-height: 100vh;
+
+  @include breakpoint(s) {
+    background-position: 13% bottom ;
+    background-size: 150% ;
+  }
+}
+
+.home {
+  @extend %background;
+
+  &__menu {
+    color: $dark-grey;
+    font-size: px-to-rems(30);
+    text-transform: uppercase;
+    padding: px-to-rems(130) 0 0 px-to-rems(80);
+
+    @include breakpoint(s) {
+      padding: px-to-rems(100) 0 0 px-to-rems(30);
+    }
+
+    a {
+      display: block;
+    }
+
+    a + a {
+      margin-top: px-to-rems(60);
+    }
+  }
+
+  &__social {
+    padding: px-to-rems(120) 0 0 px-to-rems(80);
+
+    @include breakpoint(s) {
+      padding: px-to-rems(130) 0 0 px-to-rems(30);
+    }
+  }
+}
