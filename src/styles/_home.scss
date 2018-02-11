@@ -13,11 +13,6 @@
 .home {
   @extend %background;
 
-  @include breakpoint(s) {
-    min-height: 100%;
-    overflow: hidden;
-  }
-
   &__menu {
     color: $dark-grey;
     font-size: px-to-rems(30);
