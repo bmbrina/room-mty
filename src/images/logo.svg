@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="323px" height="32px" viewBox="0 0 323 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>roomLogo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-97.000000, -109.000000)" font-family="ShoppingScriptDemo, Shopping Script Demo" font-size="288" font-weight="normal" letter-spacing="-6.94588327">
+        <text id="roomLogo" fill="#262626">
+            <tspan x="94" y="135">room</tspan>
+        </text>
+    </g>
+</svg>
