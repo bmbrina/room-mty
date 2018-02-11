@@ -13,10 +13,10 @@ const HomePage = () => {
         <NavLink exact to="/about">
           <p>about us</p>
         </NavLink>
-        <NavLink exact to="/about">
+        <NavLink exact to="/">
           <p>contact</p>
         </NavLink>
-        <NavLink exact to="/about">
+        <NavLink exact to="/">
           <p>location</p>
         </NavLink>
       </div>
