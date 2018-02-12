@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <div className="home" style={{backgroundImage: `url("${bg}")`}}>
       <div className="home__menu">
-        <NavLink exact to="/">
+        <NavLink exact to="/shop">
           <p>shop</p>
         </NavLink>
         <NavLink exact to="/about">

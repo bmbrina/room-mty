@@ -1,26 +1,9 @@
-body {
+body,
+input {
   font-family: $base-font, sans-serif;
   font-weight: 300;
 }
 
-.logo {
-  padding: px-to-rems(50) 0 0 px-to-rems(80);
-
-  @include breakpoint(s) {
-    padding: px-to-rems(50) 0 0 0;
-
-    a {
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center
-    }
-  }
-
-  &__image {
-    @include breakpoint(s) {
-      width: 60%;
-      height: auto;
-    }
-  }
+input {
+  font-size: px-to-rems(16);
 }

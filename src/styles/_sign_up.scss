@@ -1,0 +1,43 @@
+.signUp {
+  background-color: rgba(38, 38, 38, 0.4);
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  &__container {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: px-to-rems(30);
+    position: relative;
+    width: 40%;
+
+    &__close {
+      height: px-to-rems(13);
+      position: absolute;
+      right: px-to-rems(15);
+      top: px-to-rems(15);
+      width: px-to-rems(13);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .action {
+      margin-top: px-to-rems(45);
+      text-transform: uppercase;
+    }
+  }
+
+  &__title {
+    color: $dark-grey;
+    font-size: px-to-rems(24);
+    margin-bottom: px-to-rems(25);
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
