@@ -1,4 +1,5 @@
 import {
+  SET_USER,
   SET_USER_ID,
   SET_USER_EMAIL,
   SET_USER_PASSWORD,
@@ -13,9 +14,9 @@ export default function userReducer(
   state = initialState.user,
   action
 ) {
-  let newState;
-
   switch (action.type) {
+    case SET_USER:
+      return objectAssign({}, state, action.user);
     case SET_USER_ID:
       return objectAssign({}, state, { id: action.id });
     case SET_USER_EMAIL:

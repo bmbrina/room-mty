@@ -31,33 +31,46 @@ class SignUp extends React.Component {
   createAccount() {
     const { actions, user } = this.props;
     actions.signUp(user).then(response => {
-      console.log(response);
+      this.close();
     });
   }
 
+  close() {
+    const { shopActions } = this.props;
+    shopActions.setShowSignUp(false);
+  }
+
   render() {
+    const { shop } = this.props;
+    let hidden = '';
+    if (!shop.showSignUp) {
+      hidden = 'hidden';
+    }
+
     return (
-      <div className="signUp">
-        <div className="signUp__container align-flex center is-column">
-          <img src={close} className="signUp__container__close" />
-          <h2 className="signUp__title">Sign Up</h2>
-          <div className="inputs__wrapper">
-            <p className="label">First name:</p>
-            <input type="text" onChange={this.updateUserName.bind(this)} />
+      <div className={`signUp ${hidden}`}>
+        <div className="signUp__container">
+          <img src={close} className="signUp__container__close" onClick={this.close.bind(this)} />
+          <div className="signUp__container__content align-flex center is-column">
+            <h2 className="signUp__title">Sign Up</h2>
+            <div className="inputs__wrapper">
+              <p className="label">First name:</p>
+              <input type="text" onChange={this.updateUserName.bind(this)} />
+            </div>
+            <div className="inputs__wrapper">
+              <p className="label">Last name:</p>
+              <input type="text" onChange={this.updateUserLastName.bind(this)} />
+            </div>
+            <div className="inputs__wrapper">
+              <p className="label">Email:</p>
+              <input type="text" onChange={this.updateUserEmail.bind(this)} />
+            </div>
+            <div className="inputs__wrapper">
+              <p className="label">Password:</p>
+              <input type="password" onChange={this.updateUserPassword.bind(this)} />
+            </div>
+            <a className="button__dark action" onClick={this.createAccount.bind(this)}>Create Account</a>
           </div>
-          <div className="inputs__wrapper">
-            <p className="label">Last name:</p>
-            <input type="text" onChange={this.updateUserLastName.bind(this)} />
-          </div>
-          <div className="inputs__wrapper">
-            <p className="label">Email:</p>
-            <input type="text" onChange={this.updateUserEmail.bind(this)} />
-          </div>
-          <div className="inputs__wrapper">
-            <p className="label">Password:</p>
-            <input type="password" onChange={this.updateUserPassword.bind(this)} />
-          </div>
-          <a className="button__dark action" onClick={this.createAccount.bind(this)}>Create Account</a>
         </div>
       </div>
     );
@@ -66,7 +79,9 @@ class SignUp extends React.Component {
 
 SignUp.propTypes = {
   user: PropTypes.object,
-  actions: PropTypes.object
+  shop: PropTypes.object,
+  actions: PropTypes.object,
+  shopActions: PropTypes.object
 };
 
 export default SignUp;

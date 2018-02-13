@@ -7,19 +7,17 @@ export function signUp(user) {
       .then(userId => {
         dispatch(setUserId(userId));
       })
-      .catch(error => {
-        //display error
-      });
+      .catch(error => error);
   };
 }
 
 export function signIn(user) {
   return function(dispatch) {
     return UserApi.signIn(user)
-      .then(response => response)
-      .catch(error => {
-        //display error
-      });
+      .then(user => {
+        dispatch(setUser(user));
+      })
+      .catch(error => error);
   };
 }
 
@@ -28,6 +26,13 @@ export function recoverPassword(user) {
     return UserApi.recoverPassword(user)
       .then(response => response)
       .catch(error => error);
+  };
+}
+
+export function setUser(user) {
+  return {
+    type: types.SET_USER,
+    user
   };
 }
 

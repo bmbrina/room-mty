@@ -5,7 +5,12 @@ import logo from '../images/logo.svg';
 
 class Header extends React.Component {
 
-  displayHeader(path) {
+  showSignIn() {
+    const { actions } = this.props;
+    actions.setShowSignIn(true);
+  }
+
+  chooseHeader(path) {
     if (["/", "/about", "/contact", "/location"].includes(path)) {
       return (
         <div className="mainLogo">
@@ -15,22 +20,37 @@ class Header extends React.Component {
         </div>
       );
     } else {
+      let user = this.isUserSignedIn();
       return (
         <div className="header row">
           <div className="offset-5 col-3">
             <a href="/"><img className="header__logo" src={logo}/></a>
           </div>
           <div className="col-3 text-right">
-            <a className="header__auth">Sign In</a>
+            {user}
           </div>
         </div>
       );
     }
   }
 
+  isUserSignedIn() {
+    const { user } = this.props;
+
+    if (user.id != '') {
+      return (
+        <a>{user.name + " " + user.lastname}</a>
+      );
+    } else {
+      return (
+        <a className="header__auth" onClick={this.showSignIn.bind(this)}>Sign In</a>
+      );
+    }
+  }
+
   render() {
     const { location } = this.props;
-    let header = this.displayHeader(location.pathname);
+    let header = this.chooseHeader(location.pathname);
     return (
       <div>
         {header}
@@ -40,7 +60,9 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  location: PropTypes.object
+  user: PropTypes.object,
+  location: PropTypes.object,
+  actions: PropTypes.object
 };
 
 export default Header;

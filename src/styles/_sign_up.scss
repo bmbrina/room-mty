@@ -11,9 +11,13 @@
   &__container {
     background-color: #fff;
     margin: 10% auto;
-    padding: px-to-rems(30);
     position: relative;
     width: 40%;
+
+    @include breakpoint(s) {
+      margin: 22% auto;
+      width: 100%;
+    }
 
     &__close {
       height: px-to-rems(13);
@@ -25,6 +29,10 @@
       &:hover {
         cursor: pointer;
       }
+    }
+
+    &__content {
+      padding: px-to-rems(30);
     }
 
     .action {
