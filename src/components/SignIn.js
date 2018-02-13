@@ -29,6 +29,12 @@ class SignIn extends React.Component {
     shopActions.setShowSignUp(true);
   }
 
+  showRecoverPassword() {
+    const { shopActions } = this.props;
+    this.close();
+    shopActions.setShowRecoverPassword(true);
+  }
+
   close() {
     const { shopActions } = this.props;
     shopActions.setShowSignIn(false);
@@ -56,7 +62,7 @@ class SignIn extends React.Component {
               <input type="password" onChange={this.updateUserPassword.bind(this)} />
             </div>
             <a className="button__dark action" onClick={this.signIn.bind(this)}>Sign In</a>
-            <a className="recover">Recover Password</a>
+            <a className="recover" onClick={this.showRecoverPassword.bind(this)}>Recover Password</a>
           </div>
           <div className="signIn__prompt text-center">
             <a onClick={this.showSignUp.bind(this)}>Create Account</a>
@@ -72,7 +78,6 @@ SignIn.propTypes = {
   user: PropTypes.object,
   shop: PropTypes.object,
   actions: PropTypes.object,
-  routesActions: PropTypes.object,
   shopActions: PropTypes.object
 };
 
