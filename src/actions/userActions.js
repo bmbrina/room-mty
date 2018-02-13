@@ -22,7 +22,7 @@ export function signIn(user) {
 }
 
 export function recoverPassword(user) {
-  return function(dispatch) {
+  return function() {
     return UserApi.recoverPassword(user)
       .then(response => response)
       .catch(error => error);
