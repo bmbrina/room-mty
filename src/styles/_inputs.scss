@@ -1,0 +1,27 @@
+.inputs {
+  &__wrapper {
+    width: 70%;
+
+    .label {
+      color: $dark-grey;
+      font-size: px-to-rems(20);
+      padding-bottom: px-to-rems(25);
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      border: none;
+      border-bottom: px-to-rems(2) solid $dark-grey;
+      width: 100%;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+    }
+  }
+
+  &__wrapper + &__wrapper {
+    margin-top: px-to-rems(15);
+  }
+}
