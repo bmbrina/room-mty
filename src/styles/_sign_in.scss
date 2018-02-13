@@ -1,0 +1,69 @@
+.signIn {
+  background-color: rgba(38, 38, 38, 0.4);
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  &__container {
+    background-color: #fff;
+    margin: 10% auto;
+    position: relative;
+    width: 40%;
+
+    @include breakpoint(s) {
+      margin: 22% auto;
+      width: 100%;
+    }
+
+    &__close {
+      height: px-to-rems(13);
+      position: absolute;
+      right: px-to-rems(15);
+      top: px-to-rems(15);
+      width: px-to-rems(13);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__content {
+      padding: px-to-rems(30);
+    }
+
+    .action {
+      margin: px-to-rems(45) 0 px-to-rems(20);
+      text-transform: uppercase;
+      padding: px-to-rems(10) px-to-rems(60);
+    }
+  }
+
+  &__title {
+    color: $dark-grey;
+    font-size: px-to-rems(24);
+    margin-bottom: px-to-rems(35);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__prompt {
+    background-color: $dark-grey;
+    color: #fff;
+    padding: px-to-rems(40) 0;
+    text-transform: uppercase;
+    width: 100%;
+
+    a {
+      border: px-to-rems(2) solid #fff;
+      padding: px-to-rems(10) px-to-rems(20);
+    }
+  }
+
+  .recover {
+    color: $dark-grey;
+  }
+}

@@ -1,0 +1,3 @@
+export const SHOW_SIGN_IN = "SHOW_SIGN_IN";
+export const SHOW_SIGN_UP = "SHOW_SIGN_UP";
+export const SHOW_RECOVER_PASSWORD = "SHOW_RECOVER_PASSWORD";
