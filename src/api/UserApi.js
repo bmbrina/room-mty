@@ -17,6 +17,7 @@ export default class UserApi {
 
   static createDBUser(user, id) {
     delete user.id;
+    delete user.password;
     return database.ref('users/' + id)
                    .set(user)
                    .then(response => response)
