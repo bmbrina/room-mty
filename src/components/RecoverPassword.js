@@ -12,7 +12,7 @@ class RecoverPassword extends React.Component {
 
   recoverPassword() {
     const { actions, user } = this.props;
-    actions.recoverPassword(user).then(response => {
+    actions.recoverPassword(user).then( () => {
       this.close();
     });
   }

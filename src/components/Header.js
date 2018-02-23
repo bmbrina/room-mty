@@ -61,7 +61,7 @@ class Header extends React.Component {
 
   signOut() {
     const { userActions, routesActions } = this.props;
-    userActions.signOut().then(response => {
+    userActions.signOut().then( () => {
       routesActions.goToRoot();
     });
   }
@@ -80,7 +80,9 @@ class Header extends React.Component {
 Header.propTypes = {
   user: PropTypes.object,
   location: PropTypes.object,
-  actions: PropTypes.object
+  actions: PropTypes.object,
+  routesActions: PropTypes.object,
+  userActions: PropTypes.object
 };
 
 export default Header;

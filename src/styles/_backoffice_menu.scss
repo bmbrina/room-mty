@@ -1,0 +1,11 @@
+.backofficeMenu {
+  color: $dark-grey;
+  margin: 0 auto;
+  padding-top: px-to-rems(30);
+  text-transform: uppercase;
+  width: 60%;
+
+  .selected {
+    text-decoration: underline;
+  }
+}
