@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react'
 import App from './App';
 
 export default class Root extends Component {
   render() {
-    const { store, history } = this.props;
+    const { store, history, persistor } = this.props;
+
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <App />
+          <PersistGate loading={null} persistor={persistor}>
+            <App />
+          </PersistGate>
         </ConnectedRouter>
       </Provider>
     );

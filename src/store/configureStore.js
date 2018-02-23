@@ -1,12 +1,25 @@
 import { createStore, compose, applyMiddleware } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
 import createHistory from 'history/createBrowserHistory';
 // 'routerMiddleware': the new way of storing route changes with redux middleware since rrV4.
 import { routerMiddleware } from 'react-router-redux';
 import rootReducer from '../reducers';
+
+const persistConfig = {
+  key: 'root',
+  storage: storage,
+  stateReconciler: autoMergeLevel2
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+
 export const history = createHistory();
-function configureStoreProd(initialState) {
+
+function configureStoreProd() {
   const reactRouterMiddleware = routerMiddleware(history);
   const middlewares = [
     // Add other middleware on this line...
@@ -18,13 +31,12 @@ function configureStoreProd(initialState) {
   ];
 
   return createStore(
-    rootReducer,
-    initialState,
+    persistedReducer,
     compose(applyMiddleware(...middlewares))
   );
 }
 
-function configureStoreDev(initialState) {
+function configureStoreDev() {
   const reactRouterMiddleware = routerMiddleware(history);
   const middlewares = [
     // Add other middleware on this line...
@@ -41,8 +53,7 @@ function configureStoreDev(initialState) {
   const composeEnhancers =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // add support for Redux dev tools
   const store = createStore(
-    rootReducer,
-    initialState,
+    persistedReducer,
     composeEnhancers(applyMiddleware(...middlewares))
   );
 
@@ -50,7 +61,9 @@ function configureStoreDev(initialState) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {
       const nextReducer = require('../reducers').default; // eslint-disable-line global-require
-      store.replaceReducer(nextReducer);
+      store.replaceReducer(
+        persistReducer(persistConfig, nextReducer)
+      );
     });
   }
 
@@ -62,4 +75,5 @@ const configureStore =
     ? configureStoreProd
     : configureStoreDev;
 
+export const persistor = persistStore(configureStore());
 export default configureStore;
