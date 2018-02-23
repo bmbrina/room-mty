@@ -25,7 +25,6 @@ class Clients extends React.Component {
         );
       });
     }
-
   }
 
   render() {
@@ -48,12 +47,13 @@ class Clients extends React.Component {
             </tbody>
           </table>
         </div>
-
       </div>
     );
   }
 }
 
-Clients.propTypes = {};
+Clients.propTypes = {
+  admin: PropTypes.object
+};
 
 export default Clients;

@@ -1,0 +1,14 @@
+.adminCatalog {
+  padding-top: px-to-rems(50);
+
+  &__content {
+    width: 80%;
+  }
+
+  &__new {
+    background-color: #000;
+    color: #fff;
+    font-size: px-to-rems(20);
+    padding: px-to-rems(10) px-to-rems(20);
+  }
+}
