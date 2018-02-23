@@ -32,7 +32,7 @@ export function recoverPassword(user) {
 export function signOut() {
   return function(dispatch) {
     return UserApi.signOut()
-      .then(response => {
+      .then( () => {
         dispatch(endSession());
       })
       .catch(error => error);

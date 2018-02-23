@@ -20,7 +20,7 @@ class SignIn extends React.Component {
     const { actions, user, routesActions } = this.props;
     actions.signIn(user).then(response => {
       if (response.user.admin) {
-        routesActions.goToBackoffice()
+        routesActions.goToBackoffice();
       } else {
         this.close();
       }
@@ -82,7 +82,8 @@ SignIn.propTypes = {
   user: PropTypes.object,
   shop: PropTypes.object,
   actions: PropTypes.object,
-  shopActions: PropTypes.object
+  shopActions: PropTypes.object,
+  routesActions: PropTypes.object
 };
 
 export default SignIn;

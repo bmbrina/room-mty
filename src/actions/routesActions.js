@@ -1,7 +1,7 @@
 import { push, replace } from 'react-router-redux';
 
 const ROOT_PATH = '/';
-const BACKOFFICE_PATH = '/backoffice'
+const BACKOFFICE_PATH = '/backoffice';
 
 export function redirectToRoot() {
   return function(dispatch) {

@@ -9,8 +9,8 @@ export default class UserApi {
   static signUp(userData) {
     return auth.createUserWithEmailAndPassword(userData.email, userData.password)
                .then(user => {
-                 return this.setDisplayName(user, userData).then(response => {
-                   return this.createDBUser(userData, user.uid).then(response => user.uid);
+                 return this.setDisplayName(user, userData).then( () => {
+                   return this.createDBUser(userData, user.uid).then( () => user.uid);
                  });
                }).catch(error => error);
   }
