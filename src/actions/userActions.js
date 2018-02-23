@@ -15,7 +15,7 @@ export function signIn(user) {
   return function(dispatch) {
     return UserApi.signIn(user)
       .then(user => {
-        dispatch(setUser(user));
+        return dispatch(setUser(user));
       })
       .catch(error => error);
   };
