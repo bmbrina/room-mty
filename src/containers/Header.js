@@ -2,6 +2,8 @@ import Header from '../components/Header';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/shopActions';
+import * as userActions from '../actions/userActions';
+import * as routesActions from '../actions/routesActions';
 
 function mapStateToProps(state) {
   return {
@@ -12,7 +14,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(actions, dispatch)
+    actions: bindActionCreators(actions, dispatch),
+    userActions: bindActionCreators(userActions, dispatch),
+    routesActions: bindActionCreators(routesActions, dispatch)
   };
 }
 

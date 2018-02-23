@@ -15,7 +15,7 @@ export function signIn(user) {
   return function(dispatch) {
     return UserApi.signIn(user)
       .then(user => {
-        dispatch(setUser(user));
+        return dispatch(setUser(user));
       })
       .catch(error => error);
   };
@@ -25,6 +25,16 @@ export function recoverPassword(user) {
   return function() {
     return UserApi.recoverPassword(user)
       .then(response => response)
+      .catch(error => error);
+  };
+}
+
+export function signOut() {
+  return function(dispatch) {
+    return UserApi.signOut()
+      .then(response => {
+        dispatch(endSession());
+      })
       .catch(error => error);
   };
 }
@@ -68,5 +78,11 @@ export function setUserLastName(lastname) {
   return {
     type: types.SET_USER_LASTNAME,
     lastname
+  };
+}
+
+export function endSession() {
+  return {
+    type: types.END_SESSION,
   };
 }
