@@ -21,11 +21,11 @@ class Header extends React.Component {
       );
     } else if (["/backoffice"].includes(path)){
       return (
-        <div className="header row">
+        <div className="header row align-flex vertical">
           <div className="offset-5 col-3">
             <a href="/"><img className="header__logo" src={logo}/></a>
           </div>
-          <div className="col-3 text-right">
+          <div className="col-4 text-right">
             <a onClick={this.signOut.bind(this)}>Sign out</a>
           </div>
         </div>
@@ -33,11 +33,11 @@ class Header extends React.Component {
     } else {
       let user = this.isUserSignedIn();
       return (
-        <div className="header row">
+        <div className="header row align-flex vertical">
           <div className="offset-5 col-3">
             <a href="/"><img className="header__logo" src={logo}/></a>
           </div>
-          <div className="col-3 text-right">
+          <div className="col-4 text-right">
             {user}
           </div>
         </div>

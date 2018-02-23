@@ -26,6 +26,10 @@
   &__logo {
     width: 50%;
     height: auto;
+
+    @include breakpoint(s) {
+      width: 80%;
+    }
   }
 
   &__auth {

@@ -5,6 +5,10 @@
   text-transform: uppercase;
   width: 60%;
 
+  @include breakpoint(s) {
+    width: 90%;
+  }
+
   .selected {
     text-decoration: underline;
   }
