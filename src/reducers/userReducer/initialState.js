@@ -4,6 +4,7 @@ export default {
     email: "",
     password: "",
     name: "",
-    lastname: ""
+    lastname: "",
+    admin: false
   }
 };

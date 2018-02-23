@@ -4,7 +4,8 @@ import {
   SET_USER_EMAIL,
   SET_USER_PASSWORD,
   SET_USER_NAME,
-  SET_USER_LASTNAME
+  SET_USER_LASTNAME,
+  END_SESSION
 } from '../constants/userConstants';
 
 import objectAssign from 'object-assign';
@@ -27,6 +28,8 @@ export default function userReducer(
       return objectAssign({}, state, { name: action.name });
     case SET_USER_LASTNAME:
       return objectAssign({}, state, { lastname: action.lastname });
+    case END_SESSION:
+      return objectAssign({}, state, initialState.user);
     default:
       return state;
   }

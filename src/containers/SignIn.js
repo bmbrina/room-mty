@@ -5,6 +5,7 @@ import * as actions from '../actions/userActions';
 import * as shopActions from '../actions/shopActions';
 import * as routesActions from '../actions/routesActions';
 
+
 function mapStateToProps(state) {
   return {
     user: state.user

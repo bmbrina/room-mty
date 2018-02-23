@@ -44,6 +44,11 @@ export default class UserApi {
                .then(response => response);
   }
 
+  static signOut() {
+    return auth.signOut()
+               .then(response => response);
+  }
+
   static getUserInformation(id) {
     let ref = database.ref('users/' + id);
     return ref.once('value')

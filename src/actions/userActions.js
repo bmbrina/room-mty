@@ -29,6 +29,16 @@ export function recoverPassword(user) {
   };
 }
 
+export function signOut() {
+  return function(dispatch) {
+    return UserApi.signOut()
+      .then(response => {
+        dispatch(endSession());
+      })
+      .catch(error => error);
+  };
+}
+
 export function setUser(user) {
   return {
     type: types.SET_USER,
@@ -68,5 +78,11 @@ export function setUserLastName(lastname) {
   return {
     type: types.SET_USER_LASTNAME,
     lastname
+  };
+}
+
+export function endSession() {
+  return {
+    type: types.END_SESSION,
   };
 }
