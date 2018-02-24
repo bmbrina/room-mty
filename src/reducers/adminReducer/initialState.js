@@ -1,5 +1,6 @@
 export default {
   admin: {
-    clients: []
+    clients: [],
+    products: []
   }
 };

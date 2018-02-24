@@ -8,7 +8,8 @@ class Clients extends React.Component {
     actions.getClients().then(response => response);
   }
 
-  displayClients(clients) {
+  displayClients() {
+    const { clients } = this.props;
     if (clients.length == 0) {
       return (
         <tr></tr>
@@ -28,8 +29,7 @@ class Clients extends React.Component {
   }
 
   render() {
-    const { admin } = this.props
-    let clients = this.displayClients(admin.clients);
+    let clients = this.displayClients();
     return (
       <div className="showClients align-flex center">
         <div className="showClients__table">

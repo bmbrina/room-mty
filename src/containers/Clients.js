@@ -5,7 +5,7 @@ import * as actions from '../actions/adminActions';
 
 function mapStateToProps(state) {
   return {
-    admin: state.admin
+    clients: state.admin.clients
   };
 }
 
