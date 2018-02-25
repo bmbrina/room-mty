@@ -11,7 +11,7 @@ class Clients extends React.Component {
   displayClients(clients) {
     if (clients.length == 0) {
       return (
-        <tr></tr>
+        <tr/>
       );
     } else {
       return clients.map( (client, index) => {
@@ -29,7 +29,7 @@ class Clients extends React.Component {
   }
 
   render() {
-    const { admin } = this.props
+    const { admin } = this.props;
     let clients = this.displayClients(admin.clients);
     return (
       <div className="showClients align-flex center">
@@ -40,7 +40,7 @@ class Clients extends React.Component {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Orders Made</th>
-                <th></th>
+                <th/>
               </tr>
             </thead>
             <tbody>
@@ -54,6 +54,9 @@ class Clients extends React.Component {
   }
 }
 
-Clients.propTypes = {};
+Clients.propTypes = {
+  actions: PropTypes.object,
+  admin: PropTypes.object
+};
 
 export default Clients;

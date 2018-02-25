@@ -1,6 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
@@ -14,9 +14,9 @@ const persistConfig = {
   storage: storage,
   stateReconciler: autoMergeLevel2,
   blacklist: ['user']
-}
+};
 
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const history = createHistory();
 
@@ -78,4 +78,3 @@ const configureStore =
 
 export const store = configureStore();
 export const persistor = persistStore(store);
-export default configureStore;
