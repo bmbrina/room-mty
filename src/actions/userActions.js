@@ -1,4 +1,6 @@
+import cookie from 'react-cookies';
 import * as types from '../constants/userConstants';
+import * as Utils from '../utils/expirationDate';
 import UserApi from '../api/UserApi';
 
 export function signUp(user) {
@@ -15,6 +17,7 @@ export function signIn(user) {
   return function(dispatch) {
     return UserApi.signIn(user)
       .then(user => {
+        cookie.save('user', user, { path: '/', expires: Utils.getExpirationDate() });
         return dispatch(setUser(user));
       })
       .catch(error => error);
@@ -33,6 +36,7 @@ export function signOut() {
   return function(dispatch) {
     return UserApi.signOut()
       .then( () => {
+        cookie.remove('user', { path: '/' });
         dispatch(endSession());
       })
       .catch(error => error);

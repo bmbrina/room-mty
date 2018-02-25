@@ -12,7 +12,7 @@ class Clients extends React.Component {
     const { clients } = this.props;
     if (clients.length == 0) {
       return (
-        <tr></tr>
+        <tr/>
       );
     } else {
       return clients.map( (client, index) => {
@@ -39,7 +39,7 @@ class Clients extends React.Component {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Orders Made</th>
-                <th></th>
+                <th/>
               </tr>
             </thead>
             <tbody>
@@ -53,7 +53,8 @@ class Clients extends React.Component {
 }
 
 Clients.propTypes = {
-  admin: PropTypes.object
+  actions: PropTypes.object,
+  clients: PropTypes.object
 };
 
 export default Clients;
