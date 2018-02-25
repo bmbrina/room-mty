@@ -1,0 +1,57 @@
+.newProduct {
+  padding-top: px-to-rems(30);
+
+  &__content {
+    width: 90%;
+  }
+
+  &__title {
+    font-size: px-to-rems(24);
+    font-weight: 400;
+    margin-bottom: px-to-rems(15);
+    text-transform: uppercase;
+  }
+
+  .uploader {
+    border: 1px solid $dark-grey;
+    height: px-to-rems(130);
+    overflow: hidden;
+    position: relative;
+    width: px-to-rems(110);
+
+    input[type="file"] {
+      cursor: pointer;
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    img {
+      height: auto;
+      width: px-to-rems(48);
+    }
+  }
+
+  .previewImage {
+    height: px-to-rems(130);
+    margin-bottom: px-to-rems(8);
+    width: px-to-rems(110);
+
+    &.selected {
+      border: 1px solid $dark-grey;
+    }
+  }
+
+  .selectedImage {
+    height: auto;
+    min-width: px-to-rems(350);
+    width: 100%;
+  }
+
+  .action {
+    padding-top: px-to-rems(35);
+  }
+}

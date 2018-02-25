@@ -4,7 +4,9 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/adminActions';
 
 function mapStateToProps(state) {
-  return {};
+  return {
+    admin: state.admin
+  };
 }
 
 function mapDispatchToProps(dispatch) {

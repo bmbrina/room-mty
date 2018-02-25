@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 class Catalog extends React.Component {
 
   render() {
-    const { admin } = this.props
+    const { admin } = this.props;
 
     return (
       <div className="adminCatalog align-flex horizontal">
