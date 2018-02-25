@@ -1,7 +1,7 @@
-import Catalog from '../components/Backoffice/Catalog';
+import Catalog from '../../components/Backoffice/Catalog';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/adminActions';
+import * as actions from '../../actions/adminActions';
 
 function mapStateToProps(state) {
   return {

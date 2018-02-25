@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Menu from '../components/Backoffice/Menu';
-import Clients from '../containers/Clients';
-import Catalog from '../containers/AdminCatalog';
+import Clients from '../containers/Backoffice/Clients';
+import Catalog from '../containers/Backoffice/Catalog';
 
 class Backoffice extends React.Component {
 
@@ -29,7 +29,8 @@ class Backoffice extends React.Component {
     let selectedComponent = this.returnSelectedComponent(backoffice.selectedMenuItem);
     return (
       <div className="backoffice">
-        <Menu selected={backoffice.selectedMenuItem} actions={actions}/> {selectedComponent}
+        <Menu selected={backoffice.selectedMenuItem} actions={actions}/>
+        {selectedComponent}
       </div>
     );
   }

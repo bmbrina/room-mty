@@ -1,12 +1,10 @@
-import Clients from '../components/Backoffice/Clients';
+import NewProduct from '../../components/Backoffice/NewProduct';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/adminActions';
+import * as actions from '../../actions/adminActions';
 
 function mapStateToProps(state) {
-  return {
-    clients: state.admin.clients
-  };
+  return {};
 }
 
 function mapDispatchToProps(dispatch) {
@@ -15,4 +13,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Clients);
+export default connect(mapStateToProps, mapDispatchToProps)(NewProduct);

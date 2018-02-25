@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 class Catalog extends React.Component {
 
@@ -9,7 +10,7 @@ class Catalog extends React.Component {
     return (
       <div className="adminCatalog align-flex horizontal">
         <div className="adminCatalog__content">
-          <a className="adminCatalog__new pull-right">Add Product</a>
+          <Link to="/backoffice/products/new" className="adminCatalog__new pull-right">Add Product</Link>
         </div>
       </div>
     );
