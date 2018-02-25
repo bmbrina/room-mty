@@ -75,5 +75,6 @@ const configureStore =
     ? configureStoreProd
     : configureStoreDev;
 
-export const persistor = persistStore(configureStore());
+export const store = configureStore();
+export const persistor = persistStore(store);
 export default configureStore;

@@ -11,11 +11,11 @@ export default class Root extends Component {
 
     return (
       <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <PersistGate loading={null} persistor={persistor}>
+        <PersistGate loading={null} persistor={persistor}>
+          <ConnectedRouter history={history}>
             <App />
-          </PersistGate>
-        </ConnectedRouter>
+          </ConnectedRouter>
+        </PersistGate>
       </Provider>
     );
   }
