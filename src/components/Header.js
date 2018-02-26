@@ -19,11 +19,11 @@ class Header extends React.Component {
           </NavLink>
         </div>
       );
-    } else if (["/backoffice"].includes(path)){
+    } else if (path.indexOf("backoffice") > -1) {
       return (
         <div className="header row align-flex vertical">
           <div className="offset-5 col-3">
-            <a href="/"><img className="header__logo" src={logo}/></a>
+            <a href="/backoffice"><img className="header__logo" src={logo}/></a>
           </div>
           <div className="col-4 text-right">
             <a onClick={this.signOut.bind(this)}>Sign out</a>

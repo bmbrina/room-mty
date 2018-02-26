@@ -1,7 +1,7 @@
-import Clients from '../components/Backoffice/Clients';
+import EditProduct from '../../components/Backoffice/EditProduct';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/adminActions';
+import * as actions from '../../actions/adminActions';
 
 function mapStateToProps(state) {
   return {
@@ -15,4 +15,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Clients);
+export default connect(mapStateToProps, mapDispatchToProps)(EditProduct);
