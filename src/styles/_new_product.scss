@@ -56,13 +56,42 @@
     }
   }
 
-  .selectedImage {
-    height: auto;
-    min-width: px-to-rems(350);
-    width: 100%;
+  .item {
+    position: relative;
 
-    @include breakpoint(s) {
-      min-width: px-to-rems(250)
+    &:hover {
+      .delete {
+        display: block;
+      }
+    }
+
+    .selectedImage {
+      height: auto;
+      min-width: px-to-rems(350);
+      width: 100%;
+
+      @include breakpoint(s) {
+        min-width: px-to-rems(250);
+        margin-top: px-to-rems(15);
+      }
+    }
+
+    .delete {
+      padding-right: px-to-rems(10);
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: none;
+      padding-top: px-to-rems(10);
+
+      img {
+        height: auto;
+        width: px-to-rems(15);
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
   }
 

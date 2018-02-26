@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import imageIcon from '../../images/image.svg';
 import arrow from '../../images/arrow.svg';
+import deleteIcon from '../../images/close-white.svg';
 
 class NewProduct extends React.Component {
   componentDidMount() {
@@ -82,6 +83,13 @@ class NewProduct extends React.Component {
     actions.addProduct(admin.product);
   }
 
+  deleteImage() {
+    const { actions, admin } = this.props;
+    actions.deleteProductImage(admin.product).then(response => {
+      window.location.reload();
+    })
+  }
+
   render() {
     const {admin} = this.props;
     let previews,
@@ -103,8 +111,11 @@ class NewProduct extends React.Component {
               <img src={imageIcon}/>
             </div>
           </div>
-          <div className="col-5">
+          <div className="col-5 item">
             <img src={selectedImage} className="selectedImage"/>
+            <div className="delete" onClick={this.deleteImage.bind(this)}>
+              <img src={deleteIcon} />
+            </div>
           </div>
           <div className="offset-1 col-4">
             <div className="inputs__wrapper">
