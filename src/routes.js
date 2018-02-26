@@ -1,7 +1,7 @@
 // Dependencies
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import cookie from 'react-cookies';
+import * as Utils from './utils/isAdmin';
 
 // Components
 import HomePage from './components/HomePage';
@@ -14,13 +14,11 @@ import Backoffice from './containers/Backoffice';
 import NewProduct from './containers/Backoffice/NewProduct';
 import EditProduct from './containers/Backoffice/EditProduct';
 
-const user = cookie.load('user');
-
 const AuthenticatedRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      user.admin ? (
+      Utils.isAdmin() ? (
         <Component {...props} />
       ) : (
         <Redirect

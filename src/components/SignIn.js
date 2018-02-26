@@ -19,11 +19,11 @@ class SignIn extends React.Component {
   signIn() {
     const { actions, user, routesActions } = this.props;
     actions.signIn(user).then(response => {
+      this.close();
       if (response.user.admin) {
         routesActions.goToBackoffice();
-      } else {
-        this.close();
       }
+
     });
   }
 

@@ -32,8 +32,8 @@ class Catalog extends React.Component {
             <img src={edit} />
           </div>
         </div>
-      )
-    })
+      );
+    });
   }
 
   render() {

@@ -87,7 +87,7 @@ export function deleteProductImage(product) {
     return AdminApi.deleteProductImage(product)
       .then( () => {
         dispatch(setSelectedImage(0));
-        dispatch(removeProductImage(product.selectedImage))
+        dispatch(removeProductImage(product.selectedImage));
       })
       .catch(error => error);
   };

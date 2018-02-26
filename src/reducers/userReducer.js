@@ -11,7 +11,7 @@ import {
 import objectAssign from 'object-assign';
 import initialState from './userReducer/initialState';
 
-const initial=  initialState.user
+const initial=  initialState.user;
 
 export default function userReducer(
   state = initialState.user,

@@ -9,8 +9,8 @@ class EditProduct extends React.Component {
   componentDidMount() {
     const {actions, match} = this.props;
     let id = match.params.id;
-    actions.getProductById(id).then(response => {
-      actions.getCategories().then(response => response);
+    actions.getProductById(id).then( () => {
+      actions.getCategories();
     });
   }
 
@@ -86,9 +86,7 @@ class EditProduct extends React.Component {
 
   deleteImage() {
     const { actions, admin } = this.props;
-    actions.deleteProductImage(admin.product).then(response => {
-      window.location.reload();
-    })
+    actions.deleteProductImage(admin.product);
   }
 
   deleteProduct() {
@@ -170,7 +168,8 @@ class EditProduct extends React.Component {
 
 EditProduct.propTypes = {
   admin: PropTypes.object,
-  actions: PropTypes.object
+  actions: PropTypes.object,
+  match: PropTypes.object
 };
 
 export default EditProduct;

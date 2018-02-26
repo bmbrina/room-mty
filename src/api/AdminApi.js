@@ -84,20 +84,20 @@ export default class AdminApi {
     return database.ref('products')
                    .child(product.id)
                    .remove()
-                   .then(response => {
+                   .then( () => {
                      return product.images.map( url => {
                        return this.deleteImageFromStorage(url);
-                     })
-                   })
+                     });
+                   });
   }
 
   static deleteProductImage(product) {
     return database.ref('products/' + product.id + '/images')
                    .child(product.selectedImage)
                    .remove()
-                   .then(response => {
+                   .then( () => {
                      return this.deleteImageFromStorage(product.images[product.selectedImage]);
-                   })
+                   });
   }
 
   static deleteImageFromStorage(url) {
