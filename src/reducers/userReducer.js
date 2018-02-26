@@ -11,6 +11,8 @@ import {
 import objectAssign from 'object-assign';
 import initialState from './userReducer/initialState';
 
+const initial=  initialState.user
+
 export default function userReducer(
   state = initialState.user,
   action
@@ -29,7 +31,7 @@ export default function userReducer(
     case SET_USER_LASTNAME:
       return objectAssign({}, state, { lastname: action.lastname });
     case END_SESSION:
-      return objectAssign({}, state, initialState.user);
+      return objectAssign({}, state, initial);
     default:
       return state;
   }
