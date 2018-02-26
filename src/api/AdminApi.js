@@ -18,6 +18,17 @@ export default class AdminApi {
     });
   }
 
+  static getProducts() {
+    let ref = database.ref('products');
+    let products = [];
+    return ref.once('value').then(snapshot => {
+      snapshot.forEach(data => {
+        products.push(data.val());
+      });
+      return products;
+    });
+  }
+
   static getCategories() {
     let ref = database.ref('productCategories');
     let categories = [];

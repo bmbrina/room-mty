@@ -22,6 +22,16 @@ export function getCategories() {
   };
 }
 
+export function getProducts() {
+  return function(dispatch) {
+    return AdminApi.getProducts()
+      .then(products => {
+        dispatch(setProducts(products));
+      })
+      .catch(error => error);
+  };
+}
+
 export function uploadProductImage(file) {
   return function(dispatch) {
     return AdminApi.uploadProductImage(file)
@@ -52,6 +62,13 @@ export function setClients(value) {
 export function setCategories(value) {
   return {
     type: types.SET_CATEGORIES,
+    value
+  };
+}
+
+export function setProducts(value) {
+  return {
+    type: types.SET_PRODUCTS,
     value
   };
 }

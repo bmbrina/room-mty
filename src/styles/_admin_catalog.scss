@@ -2,13 +2,52 @@
   padding-top: px-to-rems(50);
 
   &__content {
+    margin-bottom: px-to-rems(30);
     width: 80%;
   }
 
   &__new {
-    background-color: #000;
-    color: #fff;
-    font-size: px-to-rems(20);
-    padding: px-to-rems(10) px-to-rems(20);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    font-size: px-to-rems(14);
+    text-transform: uppercase;
+    margin-top: px-to-rems(35);
+    position: relative;
+
+    img {
+      height: auto;
+      width: 85%;
+    }
+
+    .title {
+      margin-top: px-to-rems(15);
+    }
+
+    .stock {
+      color: #9b9b9b;
+      margin-top: px-to-rems(5);
+    }
+
+    .edit {
+    	padding-right: px-to-rems(30);
+    	position: absolute;
+    	right: 0;
+    	top: 0;
+      display: none;
+      padding-top: px-to-rems(10);
+
+      img {
+        height: auto;
+        width: px-to-rems(15);
+      }
+    }
+
+    &:hover .edit {
+      display: block;
+    }
+
   }
 }
