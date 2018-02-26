@@ -9,7 +9,9 @@ import {
   SET_PRODUCT_STOCK_S,
   SET_PRODUCT_STOCK_M,
   SET_PRODUCT_STOCK_L,
-  SET_PRODUCTS
+  SET_PRODUCTS,
+  SET_PRODUCT,
+  REMOVE_PRODUCT_IMAGE
 } from '../constants/adminConstants';
 
 import objectAssign from 'object-assign';
@@ -26,6 +28,8 @@ export default function userReducer(
       return objectAssign({}, state, { categories: action.value });
     case SET_PRODUCTS:
       return objectAssign({}, state, { products: action.value });
+    case SET_PRODUCT:
+      return objectAssign({}, state, { product: action.value });
     case SET_PRODUCT_NAME:
       return objectAssign({}, state, { product: {...state.product, name: action.value } });
     case SET_PRODUCT_PRICE:
@@ -44,6 +48,9 @@ export default function userReducer(
       } else {
         return objectAssign({}, state, { product: {...state.product, images: [action.value] } });
       }
+    case REMOVE_PRODUCT_IMAGE:
+      let arr = state.product.images.splice(action.value, 1);
+      return objectAssign({}, state, { product: {...state.product, images: arr } });
     case SET_SELECTED_IMAGE:
       return objectAssign({}, state, { product: {...state.product, selectedImage: action.value } });
     default:

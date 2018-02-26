@@ -23,9 +23,20 @@ export default class AdminApi {
     let products = [];
     return ref.once('value').then(snapshot => {
       snapshot.forEach(data => {
-        products.push(data.val());
+        products.push({id: data.key, ...data.val()});
       });
       return products;
+    });
+  }
+
+  static getProductById(id) {
+    let ref = database.ref('products/' + id);
+    return ref.once('value').then(snapshot => {
+      return {
+        id: snapshot.key,
+        selectedImage: 0,
+        ...snapshot.val()
+      };
     });
   }
 
@@ -50,10 +61,49 @@ export default class AdminApi {
 
   static addProduct(product) {
     delete product.selectedImage;
+    delete product.id;
     return database.ref('products/')
                    .push(product)
                    .then(response => response)
                    .catch(error => error);
 
+  }
+
+  static editProduct(product) {
+    let id = product.id;
+    delete product.selectedImage;
+    delete product.id;
+    return database.ref('products/' + id)
+                   .update(product)
+                   .then(response => response)
+                   .catch(error => error);
+
+  }
+
+  static deleteProduct(product) {
+    return database.ref('products')
+                   .child(product.id)
+                   .remove()
+                   .then(response => {
+                     return product.images.map( url => {
+                       return this.deleteImageFromStorage(url);
+                     })
+                   })
+  }
+
+  static deleteProductImage(product) {
+    return database.ref('products/' + product.id + '/images')
+                   .child(product.selectedImage)
+                   .remove()
+                   .then(response => {
+                     return this.deleteImageFromStorage(product.images[product.selectedImage]);
+                   })
+  }
+
+  static deleteImageFromStorage(url) {
+    return storage.refFromURL(url)
+                  .delete()
+                  .then(response => response)
+                  .catch(error => error);
   }
 }

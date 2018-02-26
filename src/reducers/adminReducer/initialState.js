@@ -4,6 +4,7 @@ export default {
     products: [],
     categories: [],
     product: {
+      id: "",
       name: "",
       price: "",
       category: "",

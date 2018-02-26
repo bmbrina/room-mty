@@ -22,6 +22,16 @@ export function getCategories() {
   };
 }
 
+export function getProductById(id) {
+  return function(dispatch) {
+    return AdminApi.getProductById(id)
+      .then(product => {
+        dispatch(setProduct(product));
+      })
+      .catch(error => error);
+  };
+}
+
 export function getProducts() {
   return function(dispatch) {
     return AdminApi.getProducts()
@@ -52,6 +62,37 @@ export function addProduct(product) {
   };
 }
 
+export function editProduct(product) {
+  return function(dispatch) {
+    return AdminApi.editProduct(product)
+      .then( () => {
+        dispatch(routesActions.goToBackoffice());
+      })
+      .catch(error => error);
+  };
+}
+
+export function deleteProduct(product) {
+  return function(dispatch) {
+    return AdminApi.deleteProduct(product)
+      .then( () => {
+        dispatch(routesActions.goToBackoffice());
+      })
+      .catch(error => error);
+  };
+}
+
+export function deleteProductImage(product) {
+  return function(dispatch) {
+    return AdminApi.deleteProductImage(product)
+      .then( () => {
+        dispatch(setSelectedImage(0));
+        dispatch(removeProductImage(product.selectedImage))
+      })
+      .catch(error => error);
+  };
+}
+
 export function setClients(value) {
   return {
     type: types.SET_CLIENTS,
@@ -69,6 +110,13 @@ export function setCategories(value) {
 export function setProducts(value) {
   return {
     type: types.SET_PRODUCTS,
+    value
+  };
+}
+
+export function setProduct(value) {
+  return {
+    type: types.SET_PRODUCT,
     value
   };
 }
@@ -97,6 +145,13 @@ export function setProductCategory(value) {
 export function setProductImage(value) {
   return {
     type: types.SET_PRODUCT_IMAGE,
+    value
+  };
+}
+
+export function removeProductImage(value) {
+  return {
+    type: types.REMOVE_PRODUCT_IMAGE,
     value
   };
 }

@@ -12,6 +12,7 @@ import NotFoundPage from './components/NotFoundPage';
 import Shop from './containers/Shop';
 import Backoffice from './containers/Backoffice';
 import NewProduct from './containers/Backoffice/NewProduct';
+import EditProduct from './containers/Backoffice/EditProduct';
 
 const user = cookie.load('user');
 
@@ -40,6 +41,7 @@ const Routes = () => (
     <Route path="/shop" component={Shop} />
     <AuthenticatedRoute exact path="/backoffice" component={Backoffice} />
     <AuthenticatedRoute exact path="/backoffice/products/new" component={NewProduct} />
+    <AuthenticatedRoute exact path="/backoffice/products/edit/:id" component={EditProduct} />
     <Route component={NotFoundPage} />
   </Switch>
 );

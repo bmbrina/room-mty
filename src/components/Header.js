@@ -19,7 +19,7 @@ class Header extends React.Component {
           </NavLink>
         </div>
       );
-    } else if (["/backoffice", "/backoffice/products/new"].includes(path)){
+    } else if (path.indexOf("backoffice") > -1) {
       return (
         <div className="header row align-flex vertical">
           <div className="offset-5 col-3">

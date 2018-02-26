@@ -10,8 +10,9 @@ class Catalog extends React.Component {
     actions.getProducts().then(response => response);
   }
 
-  goToEdit() {
-    
+  goToEdit(id) {
+    const { routesActions } = this.props;
+    routesActions.goToEditProduct(id);
   }
 
   displayProducts(products) {
@@ -27,7 +28,7 @@ class Catalog extends React.Component {
           <img src={product.images[0]} />
           <p className="title">{product.name}</p>
           <p className="stock">{stock}</p>
-          <div className="edit" onClick={this.goToEdit.bind(this)}>
+          <div className="edit" onClick={this.goToEdit.bind(this, product.id)}>
             <img src={edit} />
           </div>
         </div>
@@ -55,7 +56,8 @@ class Catalog extends React.Component {
 
 Catalog.propTypes = {
   admin: PropTypes.object,
-  actions: PropTypes.object
+  actions: PropTypes.object,
+  routesActions: PropTypes.object
 };
 
 export default Catalog;
