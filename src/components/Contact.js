@@ -3,7 +3,7 @@ import bg from '../images/bg.jpg';
 import instagram from '../images/instagram.svg';
 
 // Since this component is simple and static, there's no parent container for it.
-const AboutPage = () => {
+const Contact = () => {
   return (
     <div className="contact"  style={{backgroundImage: `url("${bg}")`}}>
       <div className="contact__content">
@@ -19,4 +19,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default Contact;
