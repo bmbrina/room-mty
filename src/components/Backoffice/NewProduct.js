@@ -85,9 +85,7 @@ class NewProduct extends React.Component {
 
   deleteImage() {
     const { actions, admin } = this.props;
-    actions.deleteProductImage(admin.product).then(response => {
-      window.location.reload();
-    })
+    actions.deleteProductImage(admin.product);
   }
 
   render() {

@@ -49,7 +49,8 @@ export default function userReducer(
         return objectAssign({}, state, { product: {...state.product, images: [action.value] } });
       }
     case REMOVE_PRODUCT_IMAGE:
-      let arr = state.product.images.splice(action.value, 1);
+      let arr = state.product.images;
+      arr.splice(action.value, 1);
       return objectAssign({}, state, { product: {...state.product, images: arr } });
     case SET_SELECTED_IMAGE:
       return objectAssign({}, state, { product: {...state.product, selectedImage: action.value } });
