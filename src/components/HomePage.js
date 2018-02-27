@@ -16,7 +16,7 @@ const HomePage = () => {
         <NavLink exact to="/contact">
           <p>contact</p>
         </NavLink>
-        <NavLink exact to="/">
+        <NavLink exact to="/location">
           <p>location</p>
         </NavLink>
       </div>

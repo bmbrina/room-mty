@@ -7,6 +7,7 @@ import * as Utils from './utils/isAdmin';
 import HomePage from './components/HomePage';
 import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
+import LocationPage from './components/LocationPage';
 import NotFoundPage from './components/NotFoundPage';
 
 // Containers
@@ -38,6 +39,7 @@ const Routes = () => (
     <Route exact path="/" component={HomePage} />
     <Route path="/about" component={AboutPage} />
     <Route path="/contact" component={ContactPage} />
+    <Route path="/location" component={LocationPage} />
     <Route path="/shop" component={Shop} />
     <AuthenticatedRoute exact path="/backoffice" component={Backoffice} />
     <AuthenticatedRoute exact path="/backoffice/products/new" component={NewProduct} />
