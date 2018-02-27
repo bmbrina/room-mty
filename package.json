@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Room",
   "engines": {
+    "node": "6.11.1",
     "npm": ">=3"
   },
   "scripts": {
@@ -19,6 +20,8 @@
     "remove-dist": "rimraf ./dist",
     "prebuild": "npm run lint && npm run test && npm run clean-dist",
     "build": "babel-node tools/build.js && npm run open:dist",
+    "heroku-prebuild": "",
+    "heroku-postbuild": "babel-node tools/build.js",
     "test": "jest",
     "test:CI": "babel-node tools/testCi.js",
     "test:cover": "npm run test -- --coverage ",
@@ -34,6 +37,7 @@
   "author": "Bárbara M Brina",
   "license": "Commercial",
   "dependencies": {
+    "express": "4.16.2",
     "firebase": "4.9.1",
     "load-google-maps-api": "1.1.1",
     "moment": "2.20.1",
