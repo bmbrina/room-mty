@@ -1,28 +1,36 @@
 import React from 'react';
-import GoogleMapReact from 'google-map-react';
-
-// dirección  @25.6472439,-100.3592429,21z
-// no se como poner el angulo o los grados que son 21
+import loadGoogleMapsAPI from 'load-google-maps-api';
+import bg from '../images/bg.jpg';
+import instagram from '../images/instagram.svg';
 
 class LocationPage extends React.Component {
-  static defaultProps = {
-    center: {lat: 25.64, lng: -100.36},
-    zoom: 11
-  };
+
+  componentDidMount() {
+    const location = { lat: 25.6471924, lng: -100.3612981 };
+    loadGoogleMapsAPI({key:'AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo', language: 'en'}).then( googleMaps => {
+      new googleMaps.Map( this.refs.map, {
+        zoom: 16,
+        center: location
+      });
+    });
+  }
 
   render() {
     return (
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: [YOUR_KEY] }}
-        defaultCenter={this.props.center}
-        defaultZoom={this.props.zoom}
-      >
-        <AnyReactComponent
-          lat={25.6472439}
-          lng={-100.3592429}
-          text={'Gomez Morin 404'}
-        />
-      </GoogleMapReact>
+      <div className="location" style={{backgroundImage: `url("${bg}")`}}>
+        <div className="location__content">
+          <h2 className="location__title">Location</h2>
+          <p className="location__desc">Plaza 404 <br/>
+            Av. Gómez Morín #404
+            Col. Villas del Aragón
+            entre Magnolia y Privada Cristal</p>
+          <div ref="map" className="map" />
+          <a href="https://www.instagram.com/room_mty/" target="_blank" className="location__social hide-on-s">
+            <img src={instagram}/>
+          </a>
+        </div>
+
+      </div>
     );
   }
 }

@@ -1,0 +1,48 @@
+.location {
+  @extend %background;
+
+  @include breakpoint(s) {
+    background-image: none !important;
+  }
+
+  &__content {
+    color: $dark-grey;
+    padding: px-to-rems(70) 0 0 px-to-rems(80);
+    width: 50%;
+
+    @include breakpoint(s) {
+      margin: 0 auto;
+      padding: px-to-rems(70) 0 px-to-rems(30);
+      width: 80%;
+    }
+  }
+
+  &__title {
+    font-size: px-to-rems(30);
+    margin-bottom: px-to-rems(70);
+    text-transform: uppercase;
+
+    @include breakpoint(s) {
+      text-align: center;
+    }
+  }
+
+  &__desc {
+    font-size: px-to-rems(20);
+    line-height: px-to-rems(27);
+    margin-bottom: px-to-rems(50);
+    width: 50%;
+
+    @include breakpoint(s) {
+      width: 85%;
+    }
+  }
+
+  .map {
+    height: px-to-rems(350);
+  }
+
+  &__social {
+    margin-top: px-to-rems(50);
+  }
+}

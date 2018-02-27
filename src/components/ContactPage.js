@@ -4,7 +4,7 @@ import instagram from '../images/instagram.svg';
 
 const ContactPage = () => {
   return (
-    <div className="contact"  style={{backgroundImage: `url("${bg}")`}}>
+    <div className="contact" style={{backgroundImage: `url("${bg}")`}}>
       <div className="contact__content">
         <h2 className="contact__title">Contact Us</h2>
         <p className="contact__subtitle">Email</p>
