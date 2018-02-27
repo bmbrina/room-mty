@@ -6,6 +6,7 @@ import * as Utils from './utils/isAdmin';
 // Components
 import HomePage from './components/HomePage';
 import AboutPage from './components/AboutPage';
+import ContactPage from './components/ContactPage';
 import NotFoundPage from './components/NotFoundPage';
 
 // Containers
@@ -36,6 +37,7 @@ const Routes = () => (
   <Switch>
     <Route exact path="/" component={HomePage} />
     <Route path="/about" component={AboutPage} />
+    <Route path="/contact" component={ContactPage} />
     <Route path="/shop" component={Shop} />
     <AuthenticatedRoute exact path="/backoffice" component={Backoffice} />
     <AuthenticatedRoute exact path="/backoffice/products/new" component={NewProduct} />
