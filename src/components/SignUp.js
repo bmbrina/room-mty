@@ -30,7 +30,7 @@ class SignUp extends React.Component {
 
   createAccount() {
     const { actions, user } = this.props;
-    actions.signUp(user).then(response => {
+    actions.signUp(user).then( () => {
       this.close();
     });
   }

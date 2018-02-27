@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>close</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M21.3,20.5 L40.1,1.7 C40.4,1.4 40.4,0.9 40.1,0.6 C39.8,0.3 39.3,0.3 39,0.6 L20.3,19.5 L1.5,0.7 C1.2,0.4 0.7,0.4 0.4,0.7 C0.1,1 0.1,1.5 0.4,1.8 L19.2,20.6 L0.4,39.3 C0.1,39.6 0.1,40.1 0.4,40.4 C0.5,40.5 0.7,40.6 0.9,40.6 C1.1,40.6 1.3,40.5 1.4,40.4 L20.2,21.6 L39,40.4 C39.1,40.5 39.3,40.6 39.5,40.6 C39.7,40.6 39.9,40.5 40,40.4 C40.3,40.1 40.3,39.6 40,39.3 L21.3,20.5" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="close">
+            <path d="M21.3,20.5 L40.1,1.7 C40.4,1.4 40.4,0.9 40.1,0.6 C39.8,0.3 39.3,0.3 39,0.6 L20.3,19.5 L1.5,0.7 C1.2,0.4 0.7,0.4 0.4,0.7 C0.1,1 0.1,1.5 0.4,1.8 L19.2,20.6 L0.4,39.3 C0.1,39.6 0.1,40.1 0.4,40.4 C0.5,40.5 0.7,40.6 0.9,40.6 C1.1,40.6 1.3,40.5 1.4,40.4 L20.2,21.6 L39,40.4 C39.1,40.5 39.3,40.6 39.5,40.6 C39.7,40.6 39.9,40.5 40,40.4 C40.3,40.1 40.3,39.6 40,39.3 L21.3,20.5" id="a" fill="#FFFFFF" fill-rule="nonzero"></path>
+            <g id="Clipped">
+                <g id="Rectangle-path-Clipped">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="path-1"></g>
+                    <rect id="Rectangle-path" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-2)" x="-4.8" y="-4.5" width="50.1" height="50.1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

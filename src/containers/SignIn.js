@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/userActions';
 import * as shopActions from '../actions/shopActions';
+import * as routesActions from '../actions/routesActions';
+
 
 function mapStateToProps(state) {
   return {
@@ -13,7 +15,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(actions, dispatch),
-    shopActions: bindActionCreators(shopActions, dispatch)
+    shopActions: bindActionCreators(shopActions, dispatch),
+    routesActions: bindActionCreators(routesActions, dispatch)
   };
 }
 

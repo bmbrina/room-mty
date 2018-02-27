@@ -1,0 +1,43 @@
+.showClients {
+  padding-top: px-to-rems(45);
+
+  &__table {
+    @include breakpoint(s) {
+      overflow-x: scroll;
+      width: 85%;
+    }
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 0 px-to-rems(30);
+    width: 100%;
+  }
+
+  th {
+    border-bottom: px-to-rems(1) solid #262626;
+    color: #4A4A4A;
+    font-size: px-to-rems(16);
+    padding: 0 px-to-rems(30) px-to-rems(20);
+    text-transform: uppercase;
+
+    @include breakpoint(s) {
+      padding: 0 px-to-rems(15) px-to-rems(20);
+    }
+  }
+
+  td {
+    border-bottom: px-to-rems(1) solid #262626;
+    padding: 0 px-to-rems(30) px-to-rems(30);
+
+    @include breakpoint(s) {
+      padding: 0 px-to-rems(15) px-to-rems(30);
+    }
+
+    .action {
+      border: px-to-rems(2) solid $dark-grey;
+      padding: px-to-rems(10);
+      text-transform: uppercase;
+    }
+  }
+}

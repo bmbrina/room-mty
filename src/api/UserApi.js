@@ -9,13 +9,15 @@ export default class UserApi {
   static signUp(userData) {
     return auth.createUserWithEmailAndPassword(userData.email, userData.password)
                .then(user => {
-                 return this.setDisplayName(user, userData).then(response => {
-                   return this.createDBUser(userData, user.uid).then(response => user.uid);
+                 return this.setDisplayName(user, userData).then( () => {
+                   return this.createDBUser(userData, user.uid).then( () => user.uid);
                  });
                }).catch(error => error);
   }
 
   static createDBUser(user, id) {
+    delete user.id;
+    delete user.password;
     return database.ref('users/' + id)
                    .set(user)
                    .then(response => response)
@@ -39,6 +41,11 @@ export default class UserApi {
 
   static recoverPassword(user) {
     return auth.sendPasswordResetEmail(user.email)
+               .then(response => response);
+  }
+
+  static signOut() {
+    return auth.signOut()
                .then(response => response);
   }
 
