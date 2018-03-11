@@ -11,6 +11,16 @@ export function getCategories() {
   };
 }
 
+export function getProducts() {
+  return function(dispatch) {
+    return ShopApi.getProducts()
+      .then(products => {
+        dispatch(setProducts(products));
+      })
+      .catch(error => error);
+  };
+}
+
 export function setShowSignIn(value) {
   return {
     type: types.SHOW_SIGN_IN,
@@ -35,6 +45,13 @@ export function setShowRecoverPassword(value) {
 export function setCategories(value) {
   return {
     type: types.SET_CATEGORIES,
+    value
+  };
+}
+
+export function setProducts(value) {
+  return {
+    type: types.SET_PRODUCTS,
     value
   };
 }

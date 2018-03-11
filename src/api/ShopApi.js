@@ -15,4 +15,15 @@ export default class ShopApi {
       return categories;
     });
   }
+
+  static getProducts() {
+    let ref = database.ref('products');
+    let products = [];
+    return ref.once('value').then(snapshot => {
+      snapshot.forEach(data => {
+        products.push({id: data.key, ...data.val()});
+      });
+      return products;
+    });
+  }
 }

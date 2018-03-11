@@ -4,6 +4,7 @@ export default {
     showSignUp: false,
     showRecoverPassword: false,
     categories: [],
+    products: [],
     selectedMenuItem: 'All'
   }
 };

@@ -4,6 +4,7 @@ import SignIn from '../containers/SignIn';
 import SignUp from '../containers/SignUp';
 import RecoverPassword from '../containers/RecoverPassword';
 import Menu from './Shop/Menu';
+import Catalog from './Shop/Catalog';
 
 class Shop extends React.Component {
   render() {
@@ -23,6 +24,10 @@ class Shop extends React.Component {
           actions={actions}
           selected={shop.selectedMenuItem}
           categories={shop.categories}
+        />
+        <Catalog
+          actions={actions}
+          shop={shop}
         />
       </div>
     );
