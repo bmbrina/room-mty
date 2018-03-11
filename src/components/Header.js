@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import logo from '../images/logo.svg';
+import bag from '../images/bag.svg';
 
 class Header extends React.Component {
 
@@ -39,6 +40,7 @@ class Header extends React.Component {
           </div>
           <div className="col-4 text-right">
             {user}
+            <a href="#"><img className="header__bag" src={bag}/></a>
           </div>
         </div>
       );

@@ -1,7 +1,9 @@
 import {
   SHOW_SIGN_IN,
   SHOW_SIGN_UP,
-  SHOW_RECOVER_PASSWORD
+  SHOW_RECOVER_PASSWORD,
+  SET_CATEGORIES,
+  SET_SELECTED_MENU_ITEM
 } from '../constants/shopConstants';
 
 import objectAssign from 'object-assign';
@@ -18,6 +20,10 @@ export default function userReducer(
       return objectAssign({}, state, { showSignUp: action.value });
     case SHOW_RECOVER_PASSWORD:
       return objectAssign({}, state, { showRecoverPassword: action.value });
+    case SET_SELECTED_MENU_ITEM:
+      return objectAssign({}, state, { selectedMenuItem: action.value });
+    case SET_CATEGORIES:
+      return objectAssign({}, state, { categories: action.value });
     default:
       return state;
   }
