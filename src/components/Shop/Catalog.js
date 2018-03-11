@@ -10,15 +10,29 @@ class Catalog extends React.Component {
   }
 
   displayProducts(products) {
-    return products.map( (product, index) => {
-      return (
-        <div className="shopCatalog__item col-3" key={index}>
-          <img src={product.images[0]} />
-          <p className="title">{product.name}</p>
-          <p className="price">${product.price} MXN</p>
-        </div>
-      );
-    });
+    let selected = this.props.shop.selectedMenuItem;
+    if (selected == "All") {
+      return products.map( (product, index) => {
+        return (
+          <div className="shopCatalog__item col-3" key={index}>
+            <img src={product.images[0]} />
+            <p className="title">{product.name}</p>
+            <p className="price">${product.price} MXN</p>
+          </div>
+        );
+      });
+    } else {
+      return products.filter( (product) => product.category == selected).map( (product, index) => {
+        return (
+          <div className="shopCatalog__item col-3" key={index}>
+            <img src={product.images[0]} />
+            <p className="title">{product.name}</p>
+            <p className="price">${product.price} MXN</p>
+          </div>
+        );
+      });
+    }
+
   }
 
   render() {
