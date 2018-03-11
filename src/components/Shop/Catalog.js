@@ -9,20 +9,26 @@ class Catalog extends React.Component {
     actions.getProducts().then(response => response);
   }
 
-  displayProducts(products) {
+  filterProducts(products) {
     let selected = this.props.shop.selectedMenuItem;
-    if (selected == "All") {
-      return products.map( (product, index) => {
-        return (
-          <div className="shopCatalog__item col-3" key={index}>
-            <img src={product.images[0]} />
-            <p className="title">{product.name}</p>
-            <p className="price">${product.price} MXN</p>
-          </div>
-        );
-      });
+
+    if (selected === "All") {
+      return products;
     } else {
-      return products.filter( (product) => product.category == selected).map( (product, index) => {
+      return products.filter( product => product.category === selected);
+    }
+  }
+
+  displayProducts(products) {
+    let filtered_products = this.filterProducts(products);
+    if (filtered_products.length === 0) {
+      return (
+        <div className="text-center">
+          <h2>No products to display.</h2>
+        </div>
+      );
+    } else {
+      return filtered_products.map( (product, index) => {
         return (
           <div className="shopCatalog__item col-3" key={index}>
             <img src={product.images[0]} />
@@ -32,7 +38,6 @@ class Catalog extends React.Component {
         );
       });
     }
-
   }
 
   render() {

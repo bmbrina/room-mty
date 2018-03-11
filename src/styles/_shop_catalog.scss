@@ -1,6 +1,10 @@
 .shopCatalog {
   padding-top: px-to-rems(50);
 
+  @include breakpoint(s) {
+    padding-top: px-to-rems(15);
+  }
+
   &__content {
     margin-bottom: px-to-rems(30);
     width: 80%;

@@ -38,7 +38,7 @@ class Header extends React.Component {
           <div className="offset-5 col-3">
             <a href="/"><img className="header__logo" src={logo}/></a>
           </div>
-          <div className="col-4 text-right">
+          <div className="offset-1 col-3 text-right">
             {user}
             <a href="#"><img className="header__bag" src={bag}/></a>
           </div>

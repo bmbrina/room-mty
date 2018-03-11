@@ -5,6 +5,15 @@
   text-transform: uppercase;
   width: 75%;
 
+  @include breakpoint(s) {
+    display: inline-grid;
+    margin-left: 10%;
+
+    a + a {
+      margin-top: px-to-rems(20);
+    }
+  }
+
   .selected {
     text-decoration: underline;
   }
