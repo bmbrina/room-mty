@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import SignIn from '../containers/SignIn';
 import SignUp from '../containers/SignUp';
 import RecoverPassword from '../containers/RecoverPassword';
+import Menu from './Shop/Menu';
+import Catalog from './Shop/Catalog';
 
 class Shop extends React.Component {
   render() {
-    const { shop } = this.props;
+    const { shop, actions } = this.props;
     return (
       <div>
         <SignIn
@@ -18,13 +20,23 @@ class Shop extends React.Component {
         <RecoverPassword
           shop={shop}
         />
+        <Menu
+          actions={actions}
+          selected={shop.selectedMenuItem}
+          categories={shop.categories}
+        />
+        <Catalog
+          actions={actions}
+          shop={shop}
+        />
       </div>
     );
   }
 }
 
 Shop.propTypes = {
-  shop: PropTypes.object
+  shop: PropTypes.object,
+  actions: PropTypes.object
 };
 
 export default Shop;

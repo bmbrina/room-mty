@@ -36,4 +36,10 @@
     color: $dark-grey;
     font-size: px-to-rems(16);
   }
+
+  &__bag {
+    width: auto;
+    height: px-to-rems(20);
+    margin: 0 px-to-rems(15) 0 px-to-rems(30);
+  }
 }

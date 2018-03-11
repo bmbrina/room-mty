@@ -1,0 +1,42 @@
+.shopCatalog {
+  padding-top: px-to-rems(50);
+
+  @include breakpoint(s) {
+    padding-top: px-to-rems(15);
+  }
+
+  &__content {
+    margin-bottom: px-to-rems(30);
+    width: 80%;
+  }
+
+  &__new {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    font-size: px-to-rems(14);
+    text-transform: uppercase;
+    margin-top: px-to-rems(35);
+    position: relative;
+
+    img {
+      height: auto;
+      width: 85%;
+    }
+
+    .title {
+      margin-top: px-to-rems(15);
+    }
+
+    .price {
+      color: #9b9b9b;
+      margin-top: px-to-rems(5);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
