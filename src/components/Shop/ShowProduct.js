@@ -8,7 +8,7 @@ class ShowProduct extends React.Component {
     const {actions, match} = this.props;
     let id = match.params.id;
     actions.getProductById(id).then( () => {
-      actions.setSelectedProductID(id);
+      actions.setSelectedProduct(this.props.product);
     });
   }
 
@@ -60,6 +60,11 @@ class ShowProduct extends React.Component {
     actions.setSelectedProductQuantity(quantity);
   }
 
+  addProduct() {
+    const { checkoutActions, selectedProduct } = this.props;
+    checkoutActions.addProduct(selectedProduct);
+  }
+
   render() {
     const { product, selectedProduct } = this.props;
     let previews, selectedImage;
@@ -96,7 +101,7 @@ class ShowProduct extends React.Component {
               </select>
             </div>
             <div className="action">
-              <a className="button button__dark">Add to Basket</a>
+              <a className="button button__dark" onClick={this.addProduct.bind(this)}>Add to Basket</a>
             </div>
           </div>
         </div>
@@ -109,6 +114,7 @@ ShowProduct.propTypes = {
   product: PropTypes.object,
   selectedProduct: PropTypes.object,
   actions: PropTypes.object,
+  checkoutActions: PropTypes.object,
   match: PropTypes.object
 };
 

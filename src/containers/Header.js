@@ -8,7 +8,8 @@ import * as routesActions from '../actions/routesActions';
 function mapStateToProps(state) {
   return {
     user: state.user,
-    location: state.routing.location
+    location: state.routing.location,
+    checkout: state.checkout
   };
 }
 

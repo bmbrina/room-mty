@@ -87,9 +87,9 @@ export function setSelectedImage(value) {
   };
 }
 
-export function setSelectedProductID(value) {
+export function setSelectedProduct(value) {
   return {
-    type: types.SET_SELECTED_PRODUCT_ID,
+    type: types.SET_SELECTED_PRODUCT,
     value
   };
 }

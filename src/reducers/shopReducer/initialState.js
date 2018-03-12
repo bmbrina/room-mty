@@ -20,9 +20,9 @@ export default {
     },
     selectedMenuItem: 'All',
     selectedProduct: {
-      id: "",
+      product: {},
       size: "",
-      quantity: ""
+      quantity: 0
     }
   }
 };

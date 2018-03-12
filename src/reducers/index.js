@@ -3,6 +3,7 @@ import userReducer from './userReducer';
 import shopReducer from './shopReducer';
 import backofficeReducer from './backofficeReducer';
 import adminReducer from './adminReducer';
+import checkoutReducer from './checkoutReducer';
 import { routerReducer } from 'react-router-redux';
 
 const rootReducer = combineReducers({
@@ -10,7 +11,8 @@ const rootReducer = combineReducers({
   user: userReducer,
   shop: shopReducer,
   admin: adminReducer,
-  backoffice: backofficeReducer
+  backoffice: backofficeReducer,
+  checkout: checkoutReducer
 });
 
 export default rootReducer;
