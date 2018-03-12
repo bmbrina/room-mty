@@ -80,8 +80,8 @@ class ShowProduct extends React.Component {
             <img src={selectedImage} className="selectedImage"/>
           </div>
           <div className="offset-1 col-4">
-            <p className="label">{product.name}</p>
-            <p className="label">{product.price} MXN</p>
+            <p className="showProduct__name">{product.name}</p>
+            <p className="showProduct__price">${product.price} MXN</p>
             <div className="inputs__wrapper">
               <p className="label">Size:</p>
               <select style={{backgroundImage: `url("${arrow}")`}} onChange={this.setSelectedSize.bind(this)}>

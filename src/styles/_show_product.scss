@@ -6,6 +6,18 @@
     margin-bottom: px-to-rems(30);
   }
 
+  &__name {
+    font-size: px-to-rems(20);
+    font-weight: 400;
+    margin: px-to-rems(30) 0 px-to-rems(15);
+    text-transform: uppercase;
+  }
+
+  &__price {
+    color: #9b9b9b;
+    margin-bottom: px-to-rems(100);
+  }
+
   .previewImage {
     height: px-to-rems(130);
     margin-bottom: px-to-rems(8);
