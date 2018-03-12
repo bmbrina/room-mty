@@ -1,8 +1,5 @@
 export default {
   shop: {
-    showSignIn: false,
-    showSignUp: false,
-    showRecoverPassword: false,
     categories: [],
     products: [],
     product: {
@@ -18,7 +15,6 @@ export default {
       images: [],
       selectedImage: 0
     },
-    selectedMenuItem: 'All',
     selectedProduct: {
       product: {},
       size: "",

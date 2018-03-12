@@ -2,6 +2,7 @@ import { push, replace } from 'react-router-redux';
 
 const ROOT_PATH = '/';
 const BACKOFFICE_PATH = '/backoffice';
+const SHOP_PATH = '/shop';
 const EDIT_PRODUCT_PATH = id => {
   return `/backoffice/products/edit/${id}`;
 };
@@ -24,6 +25,12 @@ export function goToRoot() {
 export function goToBackoffice() {
   return function(dispatch) {
     dispatch(push(BACKOFFICE_PATH));
+  };
+}
+
+export function goToShop() {
+  return function(dispatch) {
+    dispatch(push(SHOP_PATH));
   };
 }
 

@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import { app } from './firebase/firebase';
 
 let auth = firebase.auth();
 let database = firebase.database();

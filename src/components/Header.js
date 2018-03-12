@@ -55,7 +55,7 @@ class Header extends React.Component {
       <div className="items align-flex center">
         {checkout.products.length}
       </div>
-    )
+    );
   }
 
   isUserSignedIn() {

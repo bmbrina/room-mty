@@ -36,14 +36,14 @@ class SignUp extends React.Component {
   }
 
   close() {
-    const { shopActions } = this.props;
-    shopActions.setShowSignUp(false);
+    const { shopMenuActions } = this.props;
+    shopMenuActions.setShowSignUp(false);
   }
 
   render() {
-    const { shop } = this.props;
+    const { shopMenu } = this.props;
     let hidden = '';
-    if (!shop.showSignUp) {
+    if (!shopMenu.showSignUp) {
       hidden = 'hidden';
     }
 
@@ -79,9 +79,9 @@ class SignUp extends React.Component {
 
 SignUp.propTypes = {
   user: PropTypes.object,
-  shop: PropTypes.object,
+  shopMenu: PropTypes.object,
   actions: PropTypes.object,
-  shopActions: PropTypes.object
+  shopMenuActions: PropTypes.object
 };
 
 export default SignUp;

@@ -8,27 +8,23 @@ import Catalog from './Shop/Catalog';
 
 class Shop extends React.Component {
   render() {
-    const { shop, actions, routesActions } = this.props;
+    const { shop, shopMenu, actions, routesActions, shopMenuActions } = this.props;
     return (
       <div>
-        <SignIn
-          shop={shop}
-        />
-        <SignUp
-          shop={shop}
-        />
-        <RecoverPassword
-          shop={shop}
-        />
+        <SignIn />
+        <SignUp />
+        <RecoverPassword />
         <Menu
           actions={actions}
-          selected={shop.selectedMenuItem}
+          shopMenuActions={shopMenuActions}
+          selected={shopMenu.selectedMenuItem}
           categories={shop.categories}
         />
         <Catalog
           routesActions={routesActions}
           actions={actions}
           shop={shop}
+          shopMenu={shopMenu}
         />
       </div>
     );
@@ -37,7 +33,9 @@ class Shop extends React.Component {
 
 Shop.propTypes = {
   shop: PropTypes.object,
+  shopMenu: PropTypes.object,
   actions: PropTypes.object,
+  shopMenuActions: PropTypes.object,
   routesActions: PropTypes.object
 };
 

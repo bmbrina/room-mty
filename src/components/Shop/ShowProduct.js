@@ -65,6 +65,11 @@ class ShowProduct extends React.Component {
     checkoutActions.addProduct(selectedProduct);
   }
 
+  goBack() {
+    const { routesActions } = this.props;
+    routesActions.goToShop();
+  }
+
   render() {
     const { product, selectedProduct } = this.props;
     let previews, selectedImage;
@@ -77,6 +82,7 @@ class ShowProduct extends React.Component {
 
     return (<div className="showProduct align-flex horizontal">
       <div className="showProduct__content">
+        <a className="showProduct__back" onClick={this.goBack.bind(this)}>Go Back</a>
         <div className="row">
           <div className="col-2">
             {previews}
@@ -115,6 +121,7 @@ ShowProduct.propTypes = {
   selectedProduct: PropTypes.object,
   actions: PropTypes.object,
   checkoutActions: PropTypes.object,
+  routesActions: PropTypes.object,
   match: PropTypes.object
 };
 

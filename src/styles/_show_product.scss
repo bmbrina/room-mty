@@ -6,6 +6,14 @@
     margin-bottom: px-to-rems(30);
   }
 
+  &__back {
+    font-size: px-to-rems(18);
+    font-weight: 400;
+    margin-bottom: px-to-rems(30);
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+
   &__name {
     font-size: px-to-rems(20);
     font-weight: 400;

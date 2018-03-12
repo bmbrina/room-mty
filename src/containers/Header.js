@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/shopActions';
+import * as actions from '../actions/shopMenuActions';
 import * as userActions from '../actions/userActions';
 import * as routesActions from '../actions/routesActions';
 

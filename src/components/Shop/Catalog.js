@@ -9,7 +9,7 @@ class Catalog extends React.Component {
   }
 
   filterProducts(products) {
-    let selected = this.props.shop.selectedMenuItem;
+    let selected = this.props.shopMenu.selectedMenuItem;
 
     if (selected === "All") {
       return products;
@@ -61,6 +61,7 @@ class Catalog extends React.Component {
 
 Catalog.propTypes = {
   shop: PropTypes.object,
+  shopMenu: PropTypes.object,
   actions: PropTypes.object,
   routesActions: PropTypes.object
 };

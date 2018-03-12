@@ -28,26 +28,26 @@ class SignIn extends React.Component {
   }
 
   showSignUp() {
-    const { shopActions } = this.props;
+    const { shopMenuActions } = this.props;
     this.close();
-    shopActions.setShowSignUp(true);
+    shopMenuActions.setShowSignUp(true);
   }
 
   showRecoverPassword() {
-    const { shopActions } = this.props;
+    const { shopMenuActions } = this.props;
     this.close();
-    shopActions.setShowRecoverPassword(true);
+    shopMenuActions.setShowRecoverPassword(true);
   }
 
   close() {
-    const { shopActions } = this.props;
-    shopActions.setShowSignIn(false);
+    const { shopMenuActions } = this.props;
+    shopMenuActions.setShowSignIn(false);
   }
 
   render() {
-    const { shop } = this.props;
+    const { shopMenu } = this.props;
     let hidden = '';
-    if (!shop.showSignIn) {
+    if (!shopMenu.showSignIn) {
       hidden = 'hidden';
     }
 
@@ -80,9 +80,9 @@ class SignIn extends React.Component {
 
 SignIn.propTypes = {
   user: PropTypes.object,
-  shop: PropTypes.object,
+  shopMenu: PropTypes.object,
   actions: PropTypes.object,
-  shopActions: PropTypes.object,
+  shopMenuActions: PropTypes.object,
   routesActions: PropTypes.object
 };
 

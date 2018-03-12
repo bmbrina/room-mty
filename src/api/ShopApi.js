@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-import app from './firebase/firebase';
 
 let database = firebase.database();
 
