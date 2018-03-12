@@ -29,7 +29,7 @@ class Catalog extends React.Component {
     } else {
       return filtered_products.map( (product, index) => {
         return (
-          <div className="shopCatalog__item col-3" key={index} onClick={this.showProduct.bind(this, product.id)}>
+          <div className="shopCatalog__item" key={index} onClick={this.showProduct.bind(this, product.id)}>
             <img src={product.images[0]} />
             <p className="title">{product.name}</p>
             <p className="price">${product.price} MXN</p>
@@ -50,7 +50,7 @@ class Catalog extends React.Component {
     return (
       <div className="shopCatalog align-flex horizontal">
         <div className="shopCatalog__content">
-          <div className="row">
+          <div className="align-flex center shopCatalog__items">
             {products}
           </div>
         </div>

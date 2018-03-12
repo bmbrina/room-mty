@@ -24,7 +24,7 @@ class Catalog extends React.Component {
         stock = "Empty";
       }
       return (
-        <div className="adminCatalog__item col-3" key={index}>
+        <div className="adminCatalog__item" key={index}>
           <img src={product.images[0]} />
           <p className="title">{product.name}</p>
           <p className="stock">{stock}</p>
@@ -45,7 +45,7 @@ class Catalog extends React.Component {
           <div className="adminCatalog__new">
             <Link to="/backoffice/products/new" className="button button__dark">Add Product</Link>
           </div>
-          <div className="row text-center">
+          <div className="align-flex center shopCatalog__items">
             {products}
           </div>
         </div>

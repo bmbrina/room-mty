@@ -65,7 +65,7 @@ class Header extends React.Component {
 
     if (user.id != '') {
       return (
-        <a>{user.name + " " + user.lastname}</a>
+        <a>{user.name}</a>
       );
     } else {
       return (

@@ -11,7 +11,7 @@ class NewProduct extends React.Component {
   }
   componentDidMount() {
     const {actions} = this.props;
-    actions.getCategories();
+    actions.getCategories();m
   }
 
   onImageChange(e) {

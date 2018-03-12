@@ -15,16 +15,35 @@
     justify-content: flex-end;
   }
 
+  &__items {
+    flex-wrap: wrap;
+  }
+
   &__item {
     font-size: px-to-rems(14);
-    text-transform: uppercase;
     margin-top: px-to-rems(35);
+    padding-left: px-to-rems(10);
     position: relative;
+    text-transform: uppercase;
+    width: 23%;
+
+    @include breakpoint(m) {
+      width: 45%;
+    }
+
+    @include breakpoint(s) {
+      width: 75%;
+    }
+
 
     img {
       height: auto;
       max-height: px-to-rems(300);
-      width: 85%;
+      width: 100%;
+
+      @include breakpoint(m) {
+        min-height: px-to-rems(250);
+      }
     }
 
     .title {
