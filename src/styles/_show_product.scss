@@ -16,6 +16,10 @@
   &__price {
     color: #9b9b9b;
     margin-bottom: px-to-rems(100);
+
+    @include breakpoint(s) {
+      margin-bottom: px-to-rems(50);
+    }
   }
 
   .previewImage {
