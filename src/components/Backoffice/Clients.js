@@ -54,7 +54,7 @@ class Clients extends React.Component {
 
 Clients.propTypes = {
   actions: PropTypes.object,
-  clients: PropTypes.object
+  clients: PropTypes.array
 };
 
 export default Clients;

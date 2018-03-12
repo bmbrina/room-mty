@@ -51,11 +51,13 @@ class Header extends React.Component {
 
   checkoutItems() {
     const { checkout } = this.props;
-    return (
-      <div className="items align-flex center">
-        {checkout.products.length}
-      </div>
-    );
+    if (checkout.products.length > 0) {
+      return (
+        <div className="items align-flex center">
+          {checkout.products.length}
+        </div>
+      );
+    }
   }
 
   isUserSignedIn() {

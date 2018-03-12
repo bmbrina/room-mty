@@ -183,3 +183,9 @@ export function setSelectedImage(value) {
     value
   };
 }
+
+export function cleanProductImages() {
+  return {
+    type: types.CLEAN_PRODUCT_IMAGES
+  };
+}

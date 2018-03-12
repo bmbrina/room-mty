@@ -11,7 +11,8 @@ import {
   SET_PRODUCT_STOCK_L,
   SET_PRODUCTS,
   SET_PRODUCT,
-  REMOVE_PRODUCT_IMAGE
+  REMOVE_PRODUCT_IMAGE,
+  CLEAN_PRODUCT_IMAGES
 } from '../constants/adminConstants';
 
 import objectAssign from 'object-assign';
@@ -54,6 +55,8 @@ export default function userReducer(
       return objectAssign({}, state, { product: {...state.product, images: arr } });
     case SET_SELECTED_IMAGE:
       return objectAssign({}, state, { product: {...state.product, selectedImage: action.value } });
+    case CLEAN_PRODUCT_IMAGES:
+      return objectAssign({}, state, { product: {...state.product, images: [] } });
     default:
       return state;
   }

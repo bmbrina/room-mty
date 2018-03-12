@@ -5,9 +5,13 @@ import arrow from '../../images/arrow.svg';
 import deleteIcon from '../../images/close-white.svg';
 
 class NewProduct extends React.Component {
+  componentWillMount() {
+    const {actions} = this.props;
+    actions.cleanProductImages();
+  }
   componentDidMount() {
     const {actions} = this.props;
-    actions.getCategories().then(response => response);
+    actions.getCategories();
   }
 
   onImageChange(e) {
