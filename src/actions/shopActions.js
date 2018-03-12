@@ -21,6 +21,16 @@ export function getProducts() {
   };
 }
 
+export function getProductById(id) {
+  return function(dispatch) {
+    return ShopApi.getProductById(id)
+      .then(product => {
+        dispatch(setProduct(product));
+      })
+      .catch(error => error);
+  };
+}
+
 export function setShowSignIn(value) {
   return {
     type: types.SHOW_SIGN_IN,
@@ -56,9 +66,44 @@ export function setProducts(value) {
   };
 }
 
+export function setProduct(value) {
+  return {
+    type: types.SET_PRODUCT,
+    value
+  };
+}
+
 export function setSelectedMenuItem(value) {
   return {
     type: types.SET_SELECTED_MENU_ITEM,
+    value
+  };
+}
+
+export function setSelectedImage(value) {
+  return {
+    type: types.SET_SELECTED_IMAGE,
+    value
+  };
+}
+
+export function setSelectedProductID(value) {
+  return {
+    type: types.SET_SELECTED_PRODUCT_ID,
+    value
+  };
+}
+
+export function setSelectedProductSize(value) {
+  return {
+    type: types.SET_SELECTED_PRODUCT_SIZE,
+    value
+  };
+}
+
+export function setSelectedProductQuantity(value) {
+  return {
+    type: types.SET_SELECTED_PRODUCT_QUANTITY,
     value
   };
 }

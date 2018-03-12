@@ -1,0 +1,37 @@
+.showProduct {
+  padding-top: px-to-rems(80);
+
+  &__content {
+    width: 90%;
+    margin-bottom: px-to-rems(30);
+  }
+
+  .previewImage {
+    height: px-to-rems(130);
+    margin-bottom: px-to-rems(8);
+    width: px-to-rems(110);
+
+    @include breakpoint(s) {
+      margin-left: px-to-rems(10);
+    }
+
+    &.selected {
+      border: 1px solid $dark-grey;
+    }
+  }
+
+  .selectedImage {
+    height: auto;
+    min-width: px-to-rems(350);
+    width: 100%;
+
+    @include breakpoint(s) {
+      min-width: px-to-rems(250);
+      margin-top: px-to-rems(15);
+    }
+  }
+
+  .action {
+    padding-top: px-to-rems(35);
+  }
+}

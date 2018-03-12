@@ -13,7 +13,7 @@ const persistConfig = {
   key: 'root',
   storage: storage,
   stateReconciler: autoMergeLevel2,
-  whitelist: ['backoffice', 'shop']
+  whitelist: ['backoffice']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

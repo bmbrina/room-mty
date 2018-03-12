@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
 
 class Catalog extends React.Component {
 
@@ -30,7 +29,7 @@ class Catalog extends React.Component {
     } else {
       return filtered_products.map( (product, index) => {
         return (
-          <div className="shopCatalog__item col-3" key={index}>
+          <div className="shopCatalog__item col-3" key={index} onClick={this.showProduct.bind(this, product.id)}>
             <img src={product.images[0]} />
             <p className="title">{product.name}</p>
             <p className="price">${product.price} MXN</p>
@@ -38,6 +37,11 @@ class Catalog extends React.Component {
         );
       });
     }
+  }
+
+  showProduct(id) {
+    const { routesActions } = this.props;
+    routesActions.showProduct(id);
   }
 
   render() {
@@ -57,7 +61,8 @@ class Catalog extends React.Component {
 
 Catalog.propTypes = {
   shop: PropTypes.object,
-  actions: PropTypes.object
+  actions: PropTypes.object,
+  routesActions: PropTypes.object
 };
 
 export default Catalog;

@@ -5,6 +5,9 @@ const BACKOFFICE_PATH = '/backoffice';
 const EDIT_PRODUCT_PATH = id => {
   return `/backoffice/products/edit/${id}`;
 };
+const SHOW_PRODUCT_PATH = id => {
+  return `/shop/${id}`;
+};
 
 export function redirectToRoot() {
   return function(dispatch) {
@@ -27,5 +30,11 @@ export function goToBackoffice() {
 export function goToEditProduct(id) {
   return function(dispatch) {
     dispatch(push(EDIT_PRODUCT_PATH(id)));
+  };
+}
+
+export function showProduct(id) {
+  return function(dispatch) {
+    dispatch(push(SHOW_PRODUCT_PATH(id)));
   };
 }

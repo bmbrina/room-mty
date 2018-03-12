@@ -5,6 +5,24 @@ export default {
     showRecoverPassword: false,
     categories: [],
     products: [],
-    selectedMenuItem: 'All'
+    product: {
+      id: "",
+      name: "",
+      price: "",
+      category: "",
+      stock: {
+        small: 0,
+        medium: 0,
+        large: 0
+      },
+      images: [],
+      selectedImage: 0
+    },
+    selectedMenuItem: 'All',
+    selectedProduct: {
+      id: "",
+      size: "",
+      quantity: ""
+    }
   }
 };

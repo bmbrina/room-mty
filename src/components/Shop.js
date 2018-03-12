@@ -8,7 +8,7 @@ import Catalog from './Shop/Catalog';
 
 class Shop extends React.Component {
   render() {
-    const { shop, actions } = this.props;
+    const { shop, actions, routesActions } = this.props;
     return (
       <div>
         <SignIn
@@ -26,6 +26,7 @@ class Shop extends React.Component {
           categories={shop.categories}
         />
         <Catalog
+          routesActions={routesActions}
           actions={actions}
           shop={shop}
         />
@@ -36,7 +37,8 @@ class Shop extends React.Component {
 
 Shop.propTypes = {
   shop: PropTypes.object,
-  actions: PropTypes.object
+  actions: PropTypes.object,
+  routesActions: PropTypes.object
 };
 
 export default Shop;
