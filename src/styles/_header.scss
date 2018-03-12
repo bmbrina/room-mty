@@ -39,7 +39,19 @@
 
   &__bag {
     width: auto;
-    height: px-to-rems(20);
+    height: px-to-rems(25);
     margin: 0 px-to-rems(15) 0 px-to-rems(30);
+  }
+
+  .items {
+    background-color: $dark-grey;
+    border-radius: 50%;
+    color: #fff;
+    font-size: px-to-rems(8);
+    width: px-to-rems(18);
+    height: px-to-rems(18);
+    position: absolute;
+    right: px-to-rems(25);
+    top: px-to-rems(15);
   }
 }

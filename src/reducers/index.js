@@ -1,16 +1,20 @@
 import { combineReducers } from 'redux';
 import userReducer from './userReducer';
+import shopMenuReducer from './shopMenuReducer';
 import shopReducer from './shopReducer';
 import backofficeReducer from './backofficeReducer';
 import adminReducer from './adminReducer';
+import checkoutReducer from './checkoutReducer';
 import { routerReducer } from 'react-router-redux';
 
 const rootReducer = combineReducers({
   routing: routerReducer,
   user: userReducer,
+  shopMenu: shopMenuReducer,
   shop: shopReducer,
   admin: adminReducer,
-  backoffice: backofficeReducer
+  backoffice: backofficeReducer,
+  checkout: checkoutReducer
 });
 
 export default rootReducer;

@@ -22,9 +22,9 @@ class Menu extends React.Component {
   }
 
   setSelectedTag(e) {
-    const { actions } = this.props;
+    const { shopMenuActions } = this.props;
     e.preventDefault();
-    actions.setSelectedMenuItem(e.target.id);
+    shopMenuActions.setSelectedMenuItem(e.target.id);
   }
 
   render() {
@@ -39,6 +39,7 @@ class Menu extends React.Component {
 
 Menu.propTypes = {
   actions: PropTypes.object,
+  shopMenuActions: PropTypes.object,
   selected: PropTypes.string,
   categories: PropTypes.array
 };

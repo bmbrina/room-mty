@@ -18,14 +18,14 @@ class RecoverPassword extends React.Component {
   }
 
   close() {
-    const { shopActions } = this.props;
-    shopActions.setShowRecoverPassword(false);
+    const { shopMenuActions } = this.props;
+    shopMenuActions.setShowRecoverPassword(false);
   }
 
   render() {
-    const { shop } = this.props;
+    const { shopMenu } = this.props;
     let hidden = '';
-    if (!shop.showRecoverPassword) {
+    if (!shopMenu.showRecoverPassword) {
       hidden = 'hidden';
     }
 
@@ -49,9 +49,9 @@ class RecoverPassword extends React.Component {
 
 RecoverPassword.propTypes = {
   user: PropTypes.object,
-  shop: PropTypes.object,
+  shopMenu: PropTypes.object,
   actions: PropTypes.object,
-  shopActions: PropTypes.object
+  shopMenuActions: PropTypes.object
 };
 
 export default RecoverPassword;

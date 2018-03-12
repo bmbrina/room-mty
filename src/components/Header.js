@@ -33,6 +33,7 @@ class Header extends React.Component {
       );
     } else {
       let user = this.isUserSignedIn();
+      let items = this.checkoutItems();
       return (
         <div className="header row align-flex vertical">
           <div className="offset-5 col-3">
@@ -41,10 +42,20 @@ class Header extends React.Component {
           <div className="offset-1 col-3 text-right">
             {user}
             <a href="#"><img className="header__bag" src={bag}/></a>
+            {items}
           </div>
         </div>
       );
     }
+  }
+
+  checkoutItems() {
+    const { checkout } = this.props;
+    return (
+      <div className="items align-flex center">
+        {checkout.products.length}
+      </div>
+    );
   }
 
   isUserSignedIn() {
@@ -82,6 +93,7 @@ class Header extends React.Component {
 Header.propTypes = {
   user: PropTypes.object,
   location: PropTypes.object,
+  checkout: PropTypes.object,
   actions: PropTypes.object,
   routesActions: PropTypes.object,
   userActions: PropTypes.object
