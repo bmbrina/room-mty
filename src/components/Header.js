@@ -41,7 +41,7 @@ class Header extends React.Component {
           </div>
           <div className="offset-1 col-3 text-right">
             {user}
-            <a href="#"><img className="header__bag" src={bag}/></a>
+            <a onClick={this.goToCheckout.bind(this)}><img className="header__bag" src={bag}/></a>
             {items}
           </div>
         </div>
@@ -79,6 +79,11 @@ class Header extends React.Component {
     userActions.signOut().then( () => {
       routesActions.goToRoot();
     });
+  }
+
+  goToCheckout() {
+    const { routesActions } = this.props;
+    routesActions.goToCheckout();
   }
 
   render() {

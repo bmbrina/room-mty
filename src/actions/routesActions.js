@@ -3,6 +3,7 @@ import { push, replace } from 'react-router-redux';
 const ROOT_PATH = '/';
 const BACKOFFICE_PATH = '/backoffice';
 const SHOP_PATH = '/shop';
+const CHECKOUT_PATH = '/checkout';
 const EDIT_PRODUCT_PATH = id => {
   return `/backoffice/products/edit/${id}`;
 };
@@ -43,5 +44,11 @@ export function goToEditProduct(id) {
 export function showProduct(id) {
   return function(dispatch) {
     dispatch(push(SHOW_PRODUCT_PATH(id)));
+  };
+}
+
+export function goToCheckout() {
+  return function(dispatch) {
+    dispatch(push(CHECKOUT_PATH));
   };
 }

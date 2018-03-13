@@ -6,3 +6,18 @@ export function addProduct(value) {
     value
   };
 }
+
+export function deleteProduct(value) {
+  return {
+    type: types.DELETE_PRODUCT,
+    value
+  };
+}
+
+export function updateQuantity(index, value) {
+  return {
+    type: types.UPDATE_QUANTITY,
+    index,
+    value
+  };
+}
