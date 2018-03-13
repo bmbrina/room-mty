@@ -16,7 +16,7 @@ import Backoffice from './containers/Backoffice';
 import NewProduct from './containers/Backoffice/NewProduct';
 import EditProduct from './containers/Backoffice/EditProduct';
 import ShowProduct from './containers/Shop/ShowProduct';
-import Checkout from './containers/Checkout'
+import Checkout from './containers/Checkout';
 
 const AuthenticatedRoute = ({ component: Component, ...rest }) => (
   <Route

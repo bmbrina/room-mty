@@ -52,7 +52,7 @@ class Checkout extends React.Component {
     if (products.length == 0) {
       return total;
     } else {
-      products.map( (item, index) => {
+      products.map( item => {
         total += Number(item.product.price) * Number(item.quantity);
       });
       return total;
