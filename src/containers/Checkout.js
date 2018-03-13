@@ -1,39 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import Checkout from '../components/Checkout';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../actions/checkoutActions';
 
-class Shop extends React.Component {
-  render() {
-    const { checkout, actions } = this.props;
-    return (
-      <div>
-        <h2>Shopping Basket</h2>
-        <div className="showClients__table">
-          <table className="text-center">
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th>Name</th>
-                <th>Size</th>
-                <th>Units</th>
-                <th>Amount</th>
-                <th>Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-          </table>
-        </div>
-        <p>Total:<span></span></p>
-        <a>Checkout</a>
-      </div>
-    );
-  }
+function mapStateToProps(state) {
+  return {
+    checkout: state.checkout
+  };
 }
 
-Shop.propTypes = {
-  checkout: PropTypes.object,
-  actions: PropTypes.object
-};
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  };
+}
 
-export default Shop;
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);

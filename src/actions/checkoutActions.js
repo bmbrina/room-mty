@@ -6,3 +6,10 @@ export function addProduct(value) {
     value
   };
 }
+
+export function deleteProduct(value) {
+  return {
+    type: types.DELETE_PRODUCT,
+    value
+  };
+}
