@@ -33,6 +33,19 @@
         cursor: pointer;
       }
     }
+
+    .inputs__wrapper {
+      width: 13%;
+
+      select {
+        background-position: 90% center;
+        border: none;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
   }
 
   table {
@@ -46,6 +59,7 @@
     border-bottom: px-to-rems(1) solid #262626;
     color: #4A4A4A;
     font-size: px-to-rems(16);
+    font-weight: 300;
     padding: 0 px-to-rems(30) px-to-rems(20);
     text-transform: uppercase;
   }

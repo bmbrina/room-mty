@@ -13,3 +13,11 @@ export function deleteProduct(value) {
     value
   };
 }
+
+export function updateQuantity(index, value) {
+  return {
+    type: types.UPDATE_QUANTITY,
+    index,
+    value
+  };
+}

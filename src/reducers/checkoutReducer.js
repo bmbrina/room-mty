@@ -1,6 +1,7 @@
 import {
   ADD_PRODUCT,
-  DELETE_PRODUCT
+  DELETE_PRODUCT,
+  UPDATE_QUANTITY
 } from '../constants/checkoutConstants';
 
 import objectAssign from 'object-assign';
@@ -18,9 +19,13 @@ export default function userReducer(
       return objectAssign({}, state, { products: [action.value] });
     }
     case DELETE_PRODUCT:
+      let remainingProducts = state.products;
+      remainingProducts.splice(action.value, 1);
+      return objectAssign({}, state, { products: remainingProducts });
+    case UPDATE_QUANTITY:
       let products = state.products;
-      products.splice(action.value, 1);
-      return objectAssign({}, state, { products: products });
+      products[action.index].quantity = action.value;
+      return objectAssign({}, state, { products: products });
     default:
       return state;
   }
