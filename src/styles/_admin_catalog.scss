@@ -23,13 +23,13 @@
     text-transform: uppercase;
     width: 23%;
 
-    @include breakpoint(m) {
-      width: 45%;
-    }
-
     @include breakpoint(s) {
       width: 75%;
     }
+
+    // @include breakpoint(m) {
+    //   width: 45%;
+    // }
 
     img {
       height: auto;
