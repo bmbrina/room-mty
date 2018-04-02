@@ -58,4 +58,19 @@ export default class UserApi {
                 return user;
               });
   }
+
+  static getUserOrders(id) {
+    let ref = database.ref('orders');
+    let orders = [];
+    return ref.once('value').then(snapshot => {
+      snapshot.forEach(data => {
+        if (data.val().userId == id) {
+          let order = data.val();
+          order.id = data.key;
+          orders.push(order);
+        }
+      });
+      return orders;
+    });
+  }
 }

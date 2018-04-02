@@ -15,7 +15,8 @@ if (user != undefined) {
       password: "",
       name: "",
       lastname: "",
-      admin: false
+      admin: false,
+      orders: []
     }
   };
 }

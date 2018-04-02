@@ -17,6 +17,7 @@ import NewProduct from './containers/Backoffice/NewProduct';
 import EditProduct from './containers/Backoffice/EditProduct';
 import ShowProduct from './containers/Shop/ShowProduct';
 import Checkout from './containers/Checkout';
+import Profile from './containers/Profile';
 
 const AuthenticatedRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -45,6 +46,7 @@ const Routes = () => (
     <Route exact path="/shop" component={Shop} />
     <Route exact path="/shop/:id" component={ShowProduct} />
     <Route path="/checkout" component={Checkout} />
+    <Route path="/profile" component={Profile} />
     <AuthenticatedRoute exact path="/backoffice" component={Backoffice} />
     <AuthenticatedRoute exact path="/backoffice/products/new" component={NewProduct} />
     <AuthenticatedRoute exact path="/backoffice/products/edit/:id" component={EditProduct} />

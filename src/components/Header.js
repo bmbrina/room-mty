@@ -65,7 +65,7 @@ class Header extends React.Component {
 
     if (user.id != '') {
       return (
-        <a>{user.name}</a>
+        <a href="/profile">{user.name}</a>
       );
     } else {
       return (

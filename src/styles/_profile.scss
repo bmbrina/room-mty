@@ -1,0 +1,51 @@
+.profile {
+  margin-top: px-to-rems(80);
+  line-height: px-to-rems(20);
+
+  &__content {
+    width: 70%;
+  }
+
+  &__title {
+    font-size: px-to-rems(24);
+    font-weight: 400;
+    margin-bottom: px-to-rems(15);
+    text-transform: uppercase;
+  }
+
+  &__table {
+    @include breakpoint(s) {
+      overflow-x: scroll;
+    }
+
+    .status {
+      text-transform: uppercase;
+    }
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 0 px-to-rems(30);
+    font-weight: 400;
+    width: 100%;
+  }
+
+  th {
+    border-bottom: px-to-rems(1) solid #262626;
+    color: #4A4A4A;
+    font-size: px-to-rems(16);
+    font-weight: 300;
+    padding: 0 px-to-rems(30) px-to-rems(20);
+    text-transform: uppercase;
+  }
+
+  td {
+    border-bottom: px-to-rems(1) solid #262626;
+    padding: 0 px-to-rems(30) px-to-rems(30);
+    vertical-align: middle;
+  }
+
+  .action {
+    text-transform: uppercase;
+  }
+}

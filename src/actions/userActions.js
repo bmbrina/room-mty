@@ -32,6 +32,16 @@ export function recoverPassword(user) {
   };
 }
 
+export function getUserOrders(id) {
+  return function(dispatch) {
+    return UserApi.getUserOrders(id)
+      .then( orders => {
+        dispatch(setUserOrders(orders));
+      })
+      .catch(error => error);
+  };
+}
+
 export function signOut() {
   return function(dispatch) {
     return UserApi.signOut()
@@ -82,6 +92,13 @@ export function setUserLastName(lastname) {
   return {
     type: types.SET_USER_LASTNAME,
     lastname
+  };
+}
+
+export function setUserOrders(orders) {
+  return {
+    type: types.SET_USER_ORDERS,
+    orders
   };
 }
 
