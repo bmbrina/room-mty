@@ -21,7 +21,6 @@ class Clients extends React.Component {
             <td>{client.name} {client.lastname}</td>
             <td>{client.email}</td>
             <td>5</td>
-            <td><a className="action">See Details</a></td>
           </tr>
         );
       });
@@ -39,7 +38,6 @@ class Clients extends React.Component {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Orders Made</th>
-                <th/>
               </tr>
             </thead>
             <tbody>

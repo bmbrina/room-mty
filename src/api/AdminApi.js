@@ -18,6 +18,17 @@ export default class AdminApi {
     });
   }
 
+  static getOrders() {
+    let ref = database.ref('orders');
+    let orders = [];
+    return ref.once('value').then(snapshot => {
+      snapshot.forEach(data => {
+        orders.push({id: data.key, ...data.val()});
+      });
+      return orders;
+    });
+  }
+
   static getProducts() {
     let ref = database.ref('products');
     let products = [];

@@ -1,10 +1,14 @@
-.showClients {
+.orders {
   padding-top: px-to-rems(45);
 
   &__table {
     @include breakpoint(s) {
       overflow-x: scroll;
       width: 85%;
+    }
+
+    .status {
+      text-transform: uppercase;
     }
   }
 
