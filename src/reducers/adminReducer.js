@@ -12,7 +12,8 @@ import {
   SET_PRODUCTS,
   SET_PRODUCT,
   REMOVE_PRODUCT_IMAGE,
-  CLEAN_PRODUCT_IMAGES
+  CLEAN_PRODUCT_IMAGES,
+  SET_ORDERS
 } from '../constants/adminConstants';
 
 import objectAssign from 'object-assign';
@@ -27,6 +28,8 @@ export default function userReducer(
       return objectAssign({}, state, { clients: action.value });
     case SET_CATEGORIES:
       return objectAssign({}, state, { categories: action.value });
+    case SET_ORDERS:
+      return objectAssign({}, state, { orders: action.value });
     case SET_PRODUCTS:
       return objectAssign({}, state, { products: action.value });
     case SET_PRODUCT:

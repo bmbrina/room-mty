@@ -22,6 +22,16 @@ export function getCategories() {
   };
 }
 
+export function getOrders() {
+  return function(dispatch) {
+    return AdminApi.getOrders()
+      .then(orders => {
+        dispatch(setOrders(orders));
+      })
+      .catch(error => error);
+  };
+}
+
 export function getProductById(id) {
   return function(dispatch) {
     return AdminApi.getProductById(id)
@@ -103,6 +113,13 @@ export function setClients(value) {
 export function setCategories(value) {
   return {
     type: types.SET_CATEGORIES,
+    value
+  };
+}
+
+export function setOrders(value) {
+  return {
+    type: types.SET_ORDERS,
     value
   };
 }

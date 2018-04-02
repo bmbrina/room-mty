@@ -2,6 +2,7 @@ export default {
   admin: {
     clients: [],
     products: [],
+    orders: [],
     categories: [],
     product: {
       id: "",
