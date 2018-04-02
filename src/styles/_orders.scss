@@ -22,7 +22,7 @@
     border-bottom: px-to-rems(1) solid #262626;
     color: #4A4A4A;
     font-size: px-to-rems(16);
-    padding: 0 px-to-rems(30) px-to-rems(20);
+    padding: 0 px-to-rems(40) px-to-rems(20);
     text-transform: uppercase;
 
     @include breakpoint(s) {
@@ -32,7 +32,7 @@
 
   td {
     border-bottom: px-to-rems(1) solid #262626;
-    padding: 0 px-to-rems(30) px-to-rems(30);
+    padding: 0 px-to-rems(40) px-to-rems(30);
 
     @include breakpoint(s) {
       padding: 0 px-to-rems(15) px-to-rems(30);
