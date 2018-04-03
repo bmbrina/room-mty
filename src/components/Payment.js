@@ -118,8 +118,6 @@ class Payment extends React.Component {
 			console.log("Error!", err);
 		};
 
-    //<PaypalExpressBtn env={env} client={client} currency="MXN" total={total} onError={onError} onSuccess={this.onSuccess.bind(this)} onCancel={onCancel} />
-
     return (
       <div className="payment align-flex horizontal row">
         <div className="col-9 payment__content align-flex horizontal is-column">
@@ -174,7 +172,7 @@ class Payment extends React.Component {
               <p className="total text-right">Total: ${total} MXN</p>
             </div>
             <div className="action text-center">
-              <a className="button__ghost" onClick={this.onSuccess.bind(this)}>Make order</a>
+              <PaypalExpressBtn env={env} client={client} currency="MXN" total={total} onError={onError} onSuccess={this.onSuccess.bind(this)} onCancel={onCancel} />
             </div>
           </div>
         </div>
