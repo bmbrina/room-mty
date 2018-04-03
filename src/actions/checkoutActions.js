@@ -1,4 +1,16 @@
 import * as types from '../constants/checkoutConstants';
+import * as routesActions from './routesActions';
+import UserApi from '../api/UserApi';
+
+export function createOrder(order) {
+  return function(dispatch) {
+    return UserApi.createOrder(order)
+      .then( () => {
+        dispatch(routesActions.goToProfile());
+      })
+      .catch(error => error);
+  };
+}
 
 export function addProduct(value) {
   return {

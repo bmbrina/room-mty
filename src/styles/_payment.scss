@@ -47,7 +47,7 @@
 
   &__table {
     color: #fff;
-    padding: 70% 0;
+    padding: 40% 0;
 
     @include breakpoint(s) {
       padding: 10% 0;
@@ -69,10 +69,14 @@
     width: 100%;
   }
 
+  th {
+    border-bottom: px-to-rems(1) solid #fff;
+    vertical-align: middle;
+  }
+
   td {
     border-bottom: px-to-rems(1) solid #fff;
-    border-top: px-to-rems(1) solid #fff;
-    padding: px-to-rems(30) px-to-rems(10);
+    padding: px-to-rems(15) px-to-rems(10) px-to-rems(30);
     vertical-align: middle;
   }
 

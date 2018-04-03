@@ -66,6 +66,13 @@ export function setSelectedProduct(value) {
   };
 }
 
+export function setSelectedProductId(value) {
+  return {
+    type: types.SET_SELECTED_PRODUCT_ID,
+    value
+  };
+}
+
 export function setSelectedProductSize(value) {
   return {
     type: types.SET_SELECTED_PRODUCT_SIZE,

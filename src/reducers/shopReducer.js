@@ -4,6 +4,7 @@ import {
   SET_PRODUCT,
   SET_SELECTED_IMAGE,
   SET_SELECTED_PRODUCT,
+  SET_SELECTED_PRODUCT_ID,
   SET_SELECTED_PRODUCT_SIZE,
   SET_SELECTED_PRODUCT_QUANTITY
 } from '../constants/shopConstants';
@@ -26,6 +27,8 @@ export default function userReducer(
       return objectAssign({}, state, { product: {...state.product, selectedImage: action.value } });
     case SET_SELECTED_PRODUCT:
       return objectAssign({}, state, { selectedProduct: {...state.selectedProduct, product: action.value } });
+    case SET_SELECTED_PRODUCT_ID:
+      return objectAssign({}, state, { selectedProduct: {...state.selectedProduct, productId: action.value } });
     case SET_SELECTED_PRODUCT_SIZE:
       return objectAssign({}, state, { selectedProduct: {...state.selectedProduct, size: action.value } });
     case SET_SELECTED_PRODUCT_QUANTITY:

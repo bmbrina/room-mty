@@ -4,6 +4,7 @@ const ROOT_PATH = '/';
 const BACKOFFICE_PATH = '/backoffice';
 const SHOP_PATH = '/shop';
 const CHECKOUT_PATH = '/checkout';
+const PROFILE_PATH = '/profile';
 const EDIT_PRODUCT_PATH = id => {
   return `/backoffice/products/edit/${id}`;
 };
@@ -50,5 +51,11 @@ export function showProduct(id) {
 export function goToCheckout() {
   return function(dispatch) {
     dispatch(push(CHECKOUT_PATH));
+  };
+}
+
+export function goToProfile() {
+  return function(dispatch) {
+    dispatch(push(PROFILE_PATH));
   };
 }

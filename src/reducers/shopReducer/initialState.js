@@ -17,6 +17,7 @@ export default {
     },
     selectedProduct: {
       product: {},
+      productId: "",
       size: "",
       quantity: 0
     }
