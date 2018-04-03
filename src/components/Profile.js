@@ -8,7 +8,7 @@ class Profile extends React.Component {
     actions.getUserOrders(user.id);
   }
 
-  displayOrders(orders) {
+  displayOrders(orders = []) {
     if (orders.length == 0) {
       return (
         <tr/>

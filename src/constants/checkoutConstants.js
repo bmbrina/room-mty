@@ -9,3 +9,4 @@ export const SET_STATE = "SET_STATE";
 export const SET_ZIPCODE = "SET_ZIPCODE";
 export const SET_COUNTRY = "SET_COUNTRY";
 export const SET_PHONE = "SET_PHONE";
+export const RESET_CHECKOUT = "RESET_CHECKOUT";

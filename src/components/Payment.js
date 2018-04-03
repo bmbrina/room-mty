@@ -81,7 +81,7 @@ class Payment extends React.Component {
   }
 
   onSuccess() {
-    const { actions, user, checkout } = this.props;
+    const { routesActions, actions, user, checkout } = this.props;
     let order = {
       products: []
     };
@@ -89,6 +89,7 @@ class Payment extends React.Component {
     order.total = this.getTotal(checkout.products);
     order.status = "in process";
     order.date = moment().format('DD/MM/YYYY');
+    order.address = checkout.address;
     checkout.products.map( item => {
       order['products'].push({
         productId: item.productId,
@@ -96,7 +97,9 @@ class Payment extends React.Component {
         size: item.size
       });
     });
-    actions.createOrder(order);
+    actions.createOrder(order).then( () => {
+      routesActions.goToProfile();
+    })
   }
 
   render() {
@@ -183,7 +186,8 @@ class Payment extends React.Component {
 Payment.propTypes = {
   checkout: PropTypes.object,
   user: PropTypes.object,
-  actions: PropTypes.object
+  actions: PropTypes.object,
+  routesActions: PropTypes.object
 };
 
 export default Payment;

@@ -10,10 +10,13 @@ import {
   SET_ZIPCODE,
   SET_COUNTRY,
   SET_PHONE,
+  RESET_CHECKOUT
 } from '../constants/checkoutConstants';
 
 import objectAssign from 'object-assign';
 import initialState from './checkoutReducer/initialState';
+
+const initial=  initialState.checkout;
 
 export default function userReducer(
   state = initialState.checkout,
@@ -50,6 +53,8 @@ export default function userReducer(
       return objectAssign({}, state, { address: {...state.address, country: action.value } });
     case SET_PHONE:
       return objectAssign({}, state, { address: {...state.address, phone: action.value } });
+    case RESET_CHECKOUT:
+      return objectAssign({}, state, initial);
     default:
       return state;
   }
