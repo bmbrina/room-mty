@@ -73,4 +73,11 @@ export default class UserApi {
       return orders;
     });
   }
+
+  static createOrder(order) {
+    return database.ref('orders/')
+                   .push(order)
+                   .then(response => response)
+                   .catch(error => error);
+  }
 }

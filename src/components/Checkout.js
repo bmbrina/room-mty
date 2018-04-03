@@ -91,7 +91,7 @@ class Checkout extends React.Component {
           </div>
           <div className="pull-right">
             <p className="total">Total: <span>${total}</span> MXN</p>
-            <a href="#" className="button__dark pull-right">Checkout</a>
+            <a href="/payment" className="button__dark pull-right">Checkout</a>
           </div>
         </div>
 

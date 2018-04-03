@@ -9,6 +9,7 @@ class ShowProduct extends React.Component {
     let id = match.params.id;
     actions.getProductById(id).then( () => {
       actions.setSelectedProduct(this.props.product);
+      actions.setSelectedProductId(this.props.product.id);
     });
   }
 
