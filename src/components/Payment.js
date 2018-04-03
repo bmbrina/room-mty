@@ -3,6 +3,54 @@ import PropTypes from 'prop-types';
 
 class Payment extends React.Component {
 
+  updateName(event) {
+    const { actions } = this.props;
+    let name = event.target.value;
+    actions.setName(name);
+  }
+
+  updateStreet(event) {
+    const { actions } = this.props;
+    let street = event.target.value;
+    actions.setStreet(street);
+  }
+
+  updateReferences(event) {
+    const { actions } = this.props;
+    let references = event.target.value;
+    actions.setReferences(references);
+  }
+
+  updateCity(event) {
+    const { actions } = this.props;
+    let city = event.target.value;
+    actions.setCity(city);
+  }
+
+  updateState(event) {
+    const { actions } = this.props;
+    let state = event.target.value;
+    actions.setState(state);
+  }
+
+  updateZipcode(event) {
+    const { actions } = this.props;
+    let zipcode = event.target.value;
+    actions.setZipcode(zipcode);
+  }
+
+  updateCountry(event) {
+    const { actions } = this.props;
+    let country = event.target.value;
+    actions.setCountry(country);
+  }
+
+  updatePhone(event) {
+    const { actions } = this.props;
+    let phone = event.target.value;
+    actions.setPhone(phone);
+  }
+
   displayProducts(products) {
     return products.map( (item, index) => {
       const amount = Number(item.product.price) * Number(item.quantity);
@@ -40,32 +88,32 @@ class Payment extends React.Component {
           <h2 className="payment__title">Shipping Address</h2>
           <div className="inputs__wrapper">
             <p className="label">Full name:</p>
-            <input type="text" />
+            <input type="text" onChange={this.updateName.bind(this)}/>
           </div>
           <div className="inputs__wrapper">
             <p className="label">Street address:</p>
-            <input type="text" placeholder="Street and number, P.O. box, c/o."/>
-            <input type="text" placeholder="Apartment, suite, unit, building, floor, etc."/>
+            <input type="text" placeholder="Street and number, P.O. box, c/o."onChange={this.updateStreet.bind(this)}/>
+            <input type="text" placeholder="Apartment, suite, unit, building, floor, etc."onChange={this.updateReferences.bind(this)}/>
           </div>
           <div className="inputs__wrapper">
             <p className="label">City:</p>
-            <input type="text" />
+            <input type="text" onChange={this.updateCity.bind(this)}/>
           </div>
           <div className="inputs__wrapper">
             <p className="label">State:</p>
-            <input type="text" />
+            <input type="text" onChange={this.updateState.bind(this)}/>
           </div>
           <div className="inputs__wrapper">
             <p className="label">Zip code:</p>
-            <input type="text" />
+            <input type="text" onChange={this.updateZipcode.bind(this)}/>
           </div>
           <div className="inputs__wrapper">
             <p className="label">Country:</p>
-            <input type="text" />
+            <input type="text" onChange={this.updateCountry.bind(this)}/>
           </div>
           <div className="inputs__wrapper">
             <p className="label">Phone number:</p>
-            <input type="tel" />
+            <input type="tel" onChange={this.updatePhone.bind(this)}/>
           </div>
         </div>
         <div className="col-3 payment__sidebar">
@@ -90,7 +138,9 @@ class Payment extends React.Component {
 }
 
 Payment.propTypes = {
-
+  checkout: PropTypes.object,
+  actions: PropTypes.object,
+  routesActions: PropTypes.object
 };
 
 export default Payment;
