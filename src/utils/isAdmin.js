@@ -8,3 +8,12 @@ export function isAdmin() {
     return false;
   }
 }
+
+export function isLoggedIn() {
+  const user = cookie.load('user');
+  if (user) {
+    return true;
+  } else {
+    return false;
+  }
+}

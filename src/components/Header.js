@@ -31,6 +31,10 @@ class Header extends React.Component {
           </div>
         </div>
       );
+    } else if (["/payment"].includes(path)) {
+      return (
+        <div />
+      )
     } else {
       let user = this.isUserSignedIn();
       let items = this.checkoutItems();
@@ -62,7 +66,6 @@ class Header extends React.Component {
 
   isUserSignedIn() {
     const { user } = this.props;
-
     if (user.id != '') {
       return (
         <a href="/profile">{user.name}</a>

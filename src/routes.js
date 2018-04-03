@@ -18,12 +18,31 @@ import EditProduct from './containers/Backoffice/EditProduct';
 import ShowProduct from './containers/Shop/ShowProduct';
 import Checkout from './containers/Checkout';
 import Profile from './containers/Profile';
+import Payment from './containers/Payment';
+
+const AuthenticatedAdminRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      Utils.isAdmin() ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: '/shop',
+            state: { from: props.location }
+          }}
+        />
+      )
+    }
+  />
+);
 
 const AuthenticatedRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      Utils.isAdmin() ? (
+      Utils.isLoggedIn() ? (
         <Component {...props} />
       ) : (
         <Redirect
@@ -47,9 +66,10 @@ const Routes = () => (
     <Route exact path="/shop/:id" component={ShowProduct} />
     <Route path="/checkout" component={Checkout} />
     <Route path="/profile" component={Profile} />
-    <AuthenticatedRoute exact path="/backoffice" component={Backoffice} />
-    <AuthenticatedRoute exact path="/backoffice/products/new" component={NewProduct} />
-    <AuthenticatedRoute exact path="/backoffice/products/edit/:id" component={EditProduct} />
+    <AuthenticatedRoute path="/payment" component={Payment} />
+    <AuthenticatedAdminRoute exact path="/backoffice" component={Backoffice} />
+    <AuthenticatedAdminRoute exact path="/backoffice/products/new" component={NewProduct} />
+    <AuthenticatedAdminRoute exact path="/backoffice/products/edit/:id" component={EditProduct} />
     <Route component={NotFoundPage} />
   </Switch>
 );
