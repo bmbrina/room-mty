@@ -16,6 +16,7 @@ export default {
       },
       images: [],
       selectedImage: 0
-    }
+    },
+    trackingNum: ''
   }
 };

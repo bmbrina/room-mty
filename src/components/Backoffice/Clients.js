@@ -20,7 +20,6 @@ class Clients extends React.Component {
           <tr key={index}>
             <td>{client.name} {client.lastname}</td>
             <td>{client.email}</td>
-            <td>5</td>
           </tr>
         );
       });
@@ -37,7 +36,6 @@ class Clients extends React.Component {
               <tr>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Orders Made</th>
               </tr>
             </thead>
             <tbody>

@@ -16,7 +16,8 @@ if (user != undefined) {
       name: "",
       lastname: "",
       admin: false,
-      orders: []
+      orders: [],
+      selectedOrder: {}
     }
   };
 }

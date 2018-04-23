@@ -11,6 +11,12 @@ const EDIT_PRODUCT_PATH = id => {
 const SHOW_PRODUCT_PATH = id => {
   return `/shop/${id}`;
 };
+const SHOW_ORDER_PATH = id => {
+  return `/order/${id}`;
+};
+const SHOW_ADMIN_ORDER_PATH = id => {
+  return `/backoffice/order/${id}`;
+};
 
 export function redirectToRoot() {
   return function(dispatch) {
@@ -57,5 +63,17 @@ export function goToCheckout() {
 export function goToProfile() {
   return function(dispatch) {
     dispatch(push(PROFILE_PATH));
+  };
+}
+
+export function showOrder(id) {
+  return function(dispatch) {
+    dispatch(push(SHOW_ORDER_PATH(id)));
+  };
+}
+
+export function showAdminOrder(id) {
+  return function(dispatch) {
+    dispatch(push(SHOW_ADMIN_ORDER_PATH(id)));
   };
 }

@@ -13,7 +13,8 @@ import {
   SET_PRODUCT,
   REMOVE_PRODUCT_IMAGE,
   CLEAN_PRODUCT_IMAGES,
-  SET_ORDERS
+  SET_ORDERS,
+  UPDATE_TRACKING_NUMBER
 } from '../constants/adminConstants';
 
 import objectAssign from 'object-assign';
@@ -60,6 +61,8 @@ export default function userReducer(
       return objectAssign({}, state, { product: {...state.product, selectedImage: action.value } });
     case CLEAN_PRODUCT_IMAGES:
       return objectAssign({}, state, { product: {...state.product, images: [] } });
+    case UPDATE_TRACKING_NUMBER:
+      return objectAssign({}, state, { trackingNum: action.value });
     default:
       return state;
   }

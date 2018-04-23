@@ -80,4 +80,14 @@ export default class UserApi {
                    .then(response => response)
                    .catch(error => error);
   }
+
+  static getOrder(id) {
+    let ref = database.ref('orders/' + id);
+    return ref.once('value')
+              .then(snapshot => {
+                let order = snapshot.val();
+                order.id = snapshot.key;
+                return order;
+              });
+  }
 }

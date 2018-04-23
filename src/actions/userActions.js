@@ -42,6 +42,16 @@ export function getUserOrders(id) {
   };
 }
 
+export function getOrderDetail(id) {
+  return function(dispatch) {
+    return UserApi.getOrder(id)
+      .then( order => {
+        dispatch(setSelectedOrder(order));
+      })
+      .catch(error => error);
+  };
+}
+
 export function signOut() {
   return function(dispatch) {
     return UserApi.signOut()
@@ -99,6 +109,13 @@ export function setUserOrders(orders) {
   return {
     type: types.SET_USER_ORDERS,
     orders
+  };
+}
+
+export function setSelectedOrder(order) {
+  return {
+    type: types.SET_SELECTED_ORDER,
+    order
   };
 }
 

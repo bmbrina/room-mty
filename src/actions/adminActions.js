@@ -103,6 +103,16 @@ export function deleteProductImage(product) {
   };
 }
 
+export function finishOrder(id, number, status) {
+  return function(dispatch) {
+    return AdminApi.finishOrder(id, number, status)
+      .then( () => {
+        dispatch(routesActions.goToBackoffice());
+      })
+      .catch(error => error);
+  };
+}
+
 export function setClients(value) {
   return {
     type: types.SET_CLIENTS,
@@ -204,5 +214,12 @@ export function setSelectedImage(value) {
 export function cleanProductImages() {
   return {
     type: types.CLEAN_PRODUCT_IMAGES
+  };
+}
+
+export function updateTrackingNumber(value) {
+  return {
+    type: types.UPDATE_TRACKING_NUMBER,
+    value
   };
 }

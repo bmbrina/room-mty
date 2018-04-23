@@ -6,6 +6,7 @@ import {
   SET_USER_NAME,
   SET_USER_LASTNAME,
   SET_USER_ORDERS,
+  SET_SELECTED_ORDER,
   END_SESSION
 } from '../constants/userConstants';
 
@@ -33,6 +34,8 @@ export default function userReducer(
       return objectAssign({}, state, { lastname: action.lastname });
     case SET_USER_ORDERS:
       return objectAssign({}, state, { orders: action.orders });
+    case SET_SELECTED_ORDER:
+      return objectAssign({}, state, { selectedOrder: action.order });
     case END_SESSION:
       return objectAssign({}, state, initial);
     default:

@@ -22,11 +22,16 @@ class Orders extends React.Component {
             <td>{order.id}</td>
             <td className="status">{order.status}</td>
             <td>${order.total} MXN</td>
-            <td><a className="action">See Detail</a></td>
+            <td><a className="action" onClick={this.orderDetail.bind(this, order.id)}>See Detail</a></td>
           </tr>
         );
       });
     }
+  }
+
+  orderDetail(id) {
+    const { routesActions } = this.props;
+    routesActions.showAdminOrder(id);
   }
 
   render() {
@@ -56,6 +61,7 @@ class Orders extends React.Component {
 
 Orders.propTypes = {
   actions: PropTypes.object,
+  routesActions: PropTypes.object,
   orders: PropTypes.array
 };
 

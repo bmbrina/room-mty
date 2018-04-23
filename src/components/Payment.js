@@ -99,7 +99,7 @@ class Payment extends React.Component {
     });
     actions.createOrder(order).then( () => {
       routesActions.goToProfile();
-    })
+    });
   }
 
   render() {

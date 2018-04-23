@@ -34,7 +34,7 @@ class Header extends React.Component {
     } else if (["/payment"].includes(path)) {
       return (
         <div />
-      )
+      );
     } else {
       let user = this.isUserSignedIn();
       let items = this.checkoutItems();

@@ -117,4 +117,13 @@ export default class AdminApi {
                   .then(response => response)
                   .catch(error => error);
   }
+
+  static finishOrder(id, number, status) {
+    return database.ref("orders/" + id)
+           .update({
+             status: status,
+             trackingNum: number
+           }).then(response => response)
+           .catch(error => error);
+  }
 }

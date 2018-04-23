@@ -21,7 +21,7 @@ class Profile extends React.Component {
             <td>{order.id}</td>
             <td className="status">{order.status}</td>
             <td>${order.total} MXN</td>
-            <td><a className="button__light">See detail</a></td>
+            <td><a className="button__light" onClick={this.orderDetail.bind(this, order.id)}>See detail</a></td>
           </tr>
         );
       });
@@ -33,6 +33,11 @@ class Profile extends React.Component {
     actions.signOut().then( () => {
       routesActions.goToRoot();
     });
+  }
+
+  orderDetail(id) {
+    const { routesActions } = this.props;
+    routesActions.showOrder(id);
   }
 
   render() {

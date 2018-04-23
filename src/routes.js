@@ -19,6 +19,8 @@ import ShowProduct from './containers/Shop/ShowProduct';
 import Checkout from './containers/Checkout';
 import Profile from './containers/Profile';
 import Payment from './containers/Payment';
+import Order from './containers/Order';
+import ShowOrder from './containers/Backoffice/OrderDetail';
 
 const AuthenticatedAdminRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -67,9 +69,11 @@ const Routes = () => (
     <Route path="/checkout" component={Checkout} />
     <Route path="/profile" component={Profile} />
     <AuthenticatedRoute path="/payment" component={Payment} />
+    <AuthenticatedRoute path="/order/:id" component={Order} />
     <AuthenticatedAdminRoute exact path="/backoffice" component={Backoffice} />
     <AuthenticatedAdminRoute exact path="/backoffice/products/new" component={NewProduct} />
     <AuthenticatedAdminRoute exact path="/backoffice/products/edit/:id" component={EditProduct} />
+    <AuthenticatedAdminRoute exact path="/backoffice/order/:id" component={ShowOrder} />
     <Route component={NotFoundPage} />
   </Switch>
 );
