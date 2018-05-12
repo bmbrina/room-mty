@@ -57,6 +57,11 @@ class OrderDetail extends React.Component {
       order = user.selectedOrder;
       total = order.total;
     }
+    let hideAction = '';
+    if (order.status == "finished") {
+      hideAction = 'hidden';
+    }
+
     return (
       <div className="order align-flex center is-column">
         <div className="order__content">
@@ -91,7 +96,7 @@ class OrderDetail extends React.Component {
             </table>
           </div>
           <p className="total pull-right">Total: <span>${total}</span> MXN</p>
-          <div className="tracking">
+          <div className={`${hideAction} tracking`}>
             <div className="inputs__wrapper">
               <p className="label">Tracking Number:</p>
               <input type="text" onChange={this.updateTrackingNumber.bind(this)}/>
